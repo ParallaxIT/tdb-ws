@@ -21,6 +21,14 @@ namespace tdb_cal
             return "Hello World";
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="f"></param>
+        /// <param name="fileName"></param>
+        /// <param name="teamName"></param>
+        /// <param name="teamID"></param>
+        /// <returns></returns>
         [WebMethod]
         public string UploadFile(byte[] f, string fileName, string teamName, string teamID)
         {
@@ -29,6 +37,12 @@ namespace tdb_cal
             // of the file passed in the byte array
             try
             {
+                if (Path.GetExtension(fileName) != ".ics")
+                {
+                    //leave the method, this must be a calendar (ics) type of file
+                    return "Invalid Extension Type of " + Path.GetExtension(fileName);
+                }
+
                 // instance a memory stream and pass the
                 // byte array to its constructor
                 var ms = new MemoryStream(f);
