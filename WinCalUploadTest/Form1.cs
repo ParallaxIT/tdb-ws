@@ -67,6 +67,21 @@ namespace WinCalUploadTest
                 // create an instance fo the web service
                 var srv = new TDBWebService.CalUploader();
 
+                // create an instance fo the web service
+                var srvMain = new TDBMainWebService.tdb_wsv_auth();
+                string verHash = srvMain.ValidateLoggedInUser("robs", "Enigma!");
+
+                if (verHash == "ERRORNOTFOUND")
+                {
+                    MessageBox.Show("User not authenticated", "Authentication Error");
+                    return;
+                }
+                if (verHash == "ERROR")
+                {
+                    MessageBox.Show("Error in user authenticated", "Authentication Error");
+                    return;
+                }
+
                 // get the file information form the selected file
                 var fInfo = new FileInfo(filename);
 
@@ -91,7 +106,7 @@ namespace WinCalUploadTest
                     br.Close();
 
                     // pass the byte array (file) and file name to the web service
-                    string sTmp = srv.UploadFile(data, strFile,"TeamAsshole","ASDF1234");
+                    string sTmp = srv.UploadFileWithVerify(data, strFile, "TeamAsshole", "ASDF1234", verHash);
                     fStream.Close();
                     fStream.Dispose();
 

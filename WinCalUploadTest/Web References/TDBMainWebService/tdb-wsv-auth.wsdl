@@ -1,0 +1,3205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.thedrillbook.com/webserv/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.thedrillbook.com/webserv/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.thedrillbook.com/webserv/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateCreds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateCredsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateCredsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateLoggedInUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateLoggedInUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateLoggedInUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GrabCoachGUID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GrabCoachGUIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GrabCoachGUIDResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllAssistantCoachesForTeam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllAssistantCoachesForTeamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllAssistantCoachesForTeamResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllTeamsForCoach">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="coachID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllTeamsForCoachResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllTeamsForCoachResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllEventsForTeam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllEventsForTeamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllEventsForTeamResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectTeamDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectTeamDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectTeamDetailResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectUserCoach">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectUserCoachResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectUserCoachResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamEventLocationSelectAllForTeam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamEventLocationSelectAllForTeamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TeamEventLocationSelectAllForTeamResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamEventLocationSelectSingle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamEventLocationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamEventLocationSelectSingleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TeamEventLocationSelectSingleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamEventLocationInsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="locationName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="provState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zipPostal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamEventLocationInsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TeamEventLocationInsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamEventLocationUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamEventLocationID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="locationName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="provState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zipPostal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamEventLocationUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TeamEventLocationUpdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamEventLocationSelectAllForTeamList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamEventLocationSelectAllForTeamListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TeamEventLocationSelectAllForTeamListResult" type="tns:ArrayOfTeamEventLocations" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTeamEventLocations">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TeamEventLocations" nillable="true" type="tns:TeamEventLocations" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TeamEventLocations">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TeamEventLocationID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocationName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProvState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZipPostal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TeamOpponentSelectAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamOpponentSelectAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TeamOpponentSelectAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamOpponentSelectSingle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamOpponentID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamOpponentSelectSingleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TeamOpponentSelectSingleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamOpponentInsert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="opponentName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamOpponentInsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TeamOpponentInsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamOpponentUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamOpponentID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="opponentName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamOpponentUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TeamOpponentUpdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamOpponentSelectAllForTeam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TeamOpponentSelectAllForTeamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TeamOpponentSelectAllForTeamResult" type="tns:ArrayOfTeamOpponents" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTeamOpponents">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TeamOpponents" nillable="true" type="tns:TeamOpponents" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TeamOpponents">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TeamOpponentID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OpponentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateAdded" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTeamAgeLevel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTeamAgeLevelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTeamAgeLevelResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllEventsForTeamByType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="typeEvent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllEventsForTeamByTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllEventsForTeamByTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllEventsForTeamByTypeTodayForward">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="typeEvent" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="todaysDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllEventsForTeamByTypeTodayForwardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllEventsForTeamByTypeTodayForwardResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllEventsForTeamByDateForward">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllEventsForTeamByDateForwardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllEventsForTeamByDateForwardResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectSingleEventDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectSingleEventDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectSingleEventDetailResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSingleEventInstance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSingleEventInstanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSingleEventInstanceResult" type="tns:TeamEvent" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TeamEvent">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="start_date" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="end_date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="EventType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Duration" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateCreated" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FavoriteText" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamOpponentID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TeamEventLocationID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="eventType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="duration" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="location" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="favoriteText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="teamOpponentID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="teamEventLocationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertEventResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="eventType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="duration" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="location" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="favoriteText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="teamOpponentID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="teamEventLocationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateEventResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EventUpdateAttendingStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="attending" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EventUpdateAttendingStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EventUpdateAttendingStatusResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AttendanceSetStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="attending" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="eventID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AttendanceSetStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AttendanceSetStatusResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AttendanceGetStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="eventID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AttendanceGetStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AttendanceGetStatusResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EventGetPlayerAttendance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eventID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EventGetPlayerAttendanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EventGetPlayerAttendanceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectUserPlayer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectUserPlayerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectUserPlayerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectUserPlayerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="playerID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectUserPlayerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectUserPlayerDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllPlayersForTeam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllPlayersForTeamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllPlayersForTeamResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectPlayerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="playerID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectPlayerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectPlayerDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllPlayersForTeamForLists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllPlayersForTeamForListsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllPlayersForTeamForListsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllPlayersForTeamForListsWithImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllPlayersForTeamForListsWithImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllPlayersForTeamForListsWithImageResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveNewPlayer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateOfBirth" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="jerseyNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="position" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="primaryCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="provincestate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="primaryZipPostalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="img" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveNewPlayerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveNewPlayerResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="playerID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateOfBirth" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="jerseyNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="position" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="primaryCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="provincestate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="primaryZipPostalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="img" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="guid" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePlayerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerMobileVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="playerID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateOfBirth" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="jerseyNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="position" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="img" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="guid" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlayerMobileVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePlayerMobileVersionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllTasksForUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllTasksForUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllTasksForUserResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectTaskDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="taskID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectTaskDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectTaskDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="task" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="taskDescription" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveTaskResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="taskID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="task" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="taskDescription" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateTaskResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectUserCoachDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="coachID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectUserCoachDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectUserCoachDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCoachMobileVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="img" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="coachID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCoachMobileVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCoachMobileVersionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCoachesTeamsForCombo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="coachID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="season" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCoachesTeamsForComboResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCoachesTeamsForComboResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCoachActiveTeam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="coachID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCoachActiveTeamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCoachActiveTeamResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSingleEventDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eventID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSingleEventDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSingleEventDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPracticeDrills">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="practiceListingID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPracticeDrillsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPracticeDrillsResult" type="tns:ArrayOfPracticeDrills" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPracticeDrills">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PracticeDrills" nillable="true" type="tns:PracticeDrills" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PracticeDrills">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PracticeDrillsID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PracticeListingID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DrillID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DrillDuration" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateCreated" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="BlockIndex" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quad1" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quad2" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quad3" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quad4" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quad5" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quad6" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quad7" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quad8" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AssistantCoachID1" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AssistantCoachID2" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AssistantCoachID3" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllPracticeDrillsAsDs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="practiceListingID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPracticeDrillsAsDsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPracticeDrillsAsDsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuadrantsForPracticeBlock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="practiceListingID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="blockIndex" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuadrantsForPracticeBlockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQuadrantsForPracticeBlockResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAssistantCoachModName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="assistantCoachID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAssistantCoachModNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAssistantCoachModNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectSingleDrillDetailsForIos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pkid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectSingleDrillDetailsForIosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectSingleDrillDetailsForIosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllDrillsForAgeLevelMin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ageLevelID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllDrillsForAgeLevelMinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllDrillsForAgeLevelMinResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDrillsForComboByCategoryAndIceTypeAndAgeLevel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="drillCategoryID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iceType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ageLevelID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDrillsForComboByCategoryAndIceTypeAndAgeLevelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDrillsForComboByCategoryAndIceTypeAndAgeLevelResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDrillsForComboByCategoryAndAgeLevel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="drillCategoryID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ageLevelID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDrillsForComboByCategoryAndAgeLevelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDrillsForComboByCategoryAndAgeLevelResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectUserManagerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="coachID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectUserManagerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectUserManagerDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectUserManager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectUserManagerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectUserManagerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateManagerMobileVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="img" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="coachID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateManagerMobileVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateManagerMobileVersionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectUserAssistantCoachDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="coachID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectUserAssistantCoachDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectUserAssistantCoachDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectUserAssistantCoach">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectUserAssistantCoachResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectUserAssistantCoachResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAssistantCoachMobileVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="teamID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="img" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="coachID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAssistantCoachMobileVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateAssistantCoachMobileVersionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllDrillCategoriesDS">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllDrillCategoriesDSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllDrillCategoriesDSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateCredsSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateCreds" />
+  </wsdl:message>
+  <wsdl:message name="ValidateCredsSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateCredsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateLoggedInUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateLoggedInUser" />
+  </wsdl:message>
+  <wsdl:message name="ValidateLoggedInUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateLoggedInUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GrabCoachGUIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GrabCoachGUID" />
+  </wsdl:message>
+  <wsdl:message name="GrabCoachGUIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GrabCoachGUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllAssistantCoachesForTeamSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllAssistantCoachesForTeam" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllAssistantCoachesForTeamSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllAssistantCoachesForTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllTeamsForCoachSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllTeamsForCoach" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllTeamsForCoachSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllTeamsForCoachResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllEventsForTeamSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllEventsForTeam" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllEventsForTeamSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllEventsForTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectTeamDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectTeamDetail" />
+  </wsdl:message>
+  <wsdl:message name="SelectTeamDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectTeamDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectUserCoachSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectUserCoach" />
+  </wsdl:message>
+  <wsdl:message name="SelectUserCoachSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectUserCoachResponse" />
+  </wsdl:message>
+  <wsdl:message name="TeamEventLocationSelectAllForTeamSoapIn">
+    <wsdl:part name="parameters" element="tns:TeamEventLocationSelectAllForTeam" />
+  </wsdl:message>
+  <wsdl:message name="TeamEventLocationSelectAllForTeamSoapOut">
+    <wsdl:part name="parameters" element="tns:TeamEventLocationSelectAllForTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="TeamEventLocationSelectSingleSoapIn">
+    <wsdl:part name="parameters" element="tns:TeamEventLocationSelectSingle" />
+  </wsdl:message>
+  <wsdl:message name="TeamEventLocationSelectSingleSoapOut">
+    <wsdl:part name="parameters" element="tns:TeamEventLocationSelectSingleResponse" />
+  </wsdl:message>
+  <wsdl:message name="TeamEventLocationInsertSoapIn">
+    <wsdl:part name="parameters" element="tns:TeamEventLocationInsert" />
+  </wsdl:message>
+  <wsdl:message name="TeamEventLocationInsertSoapOut">
+    <wsdl:part name="parameters" element="tns:TeamEventLocationInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="TeamEventLocationUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:TeamEventLocationUpdate" />
+  </wsdl:message>
+  <wsdl:message name="TeamEventLocationUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:TeamEventLocationUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="TeamEventLocationSelectAllForTeamListSoapIn">
+    <wsdl:part name="parameters" element="tns:TeamEventLocationSelectAllForTeamList" />
+  </wsdl:message>
+  <wsdl:message name="TeamEventLocationSelectAllForTeamListSoapOut">
+    <wsdl:part name="parameters" element="tns:TeamEventLocationSelectAllForTeamListResponse" />
+  </wsdl:message>
+  <wsdl:message name="TeamOpponentSelectAllSoapIn">
+    <wsdl:part name="parameters" element="tns:TeamOpponentSelectAll" />
+  </wsdl:message>
+  <wsdl:message name="TeamOpponentSelectAllSoapOut">
+    <wsdl:part name="parameters" element="tns:TeamOpponentSelectAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="TeamOpponentSelectSingleSoapIn">
+    <wsdl:part name="parameters" element="tns:TeamOpponentSelectSingle" />
+  </wsdl:message>
+  <wsdl:message name="TeamOpponentSelectSingleSoapOut">
+    <wsdl:part name="parameters" element="tns:TeamOpponentSelectSingleResponse" />
+  </wsdl:message>
+  <wsdl:message name="TeamOpponentInsertSoapIn">
+    <wsdl:part name="parameters" element="tns:TeamOpponentInsert" />
+  </wsdl:message>
+  <wsdl:message name="TeamOpponentInsertSoapOut">
+    <wsdl:part name="parameters" element="tns:TeamOpponentInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="TeamOpponentUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:TeamOpponentUpdate" />
+  </wsdl:message>
+  <wsdl:message name="TeamOpponentUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:TeamOpponentUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="TeamOpponentSelectAllForTeamSoapIn">
+    <wsdl:part name="parameters" element="tns:TeamOpponentSelectAllForTeam" />
+  </wsdl:message>
+  <wsdl:message name="TeamOpponentSelectAllForTeamSoapOut">
+    <wsdl:part name="parameters" element="tns:TeamOpponentSelectAllForTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTeamAgeLevelSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTeamAgeLevel" />
+  </wsdl:message>
+  <wsdl:message name="GetTeamAgeLevelSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTeamAgeLevelResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllEventsForTeamByTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllEventsForTeamByType" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllEventsForTeamByTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllEventsForTeamByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllEventsForTeamByTypeTodayForwardSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllEventsForTeamByTypeTodayForward" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllEventsForTeamByTypeTodayForwardSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllEventsForTeamByTypeTodayForwardResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllEventsForTeamByDateForwardSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllEventsForTeamByDateForward" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllEventsForTeamByDateForwardSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllEventsForTeamByDateForwardResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectSingleEventDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectSingleEventDetail" />
+  </wsdl:message>
+  <wsdl:message name="SelectSingleEventDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectSingleEventDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSingleEventInstanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSingleEventInstance" />
+  </wsdl:message>
+  <wsdl:message name="GetSingleEventInstanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSingleEventInstanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertEventSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertEvent" />
+  </wsdl:message>
+  <wsdl:message name="InsertEventSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEventSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEvent" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEventSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="EventUpdateAttendingStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:EventUpdateAttendingStatus" />
+  </wsdl:message>
+  <wsdl:message name="EventUpdateAttendingStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:EventUpdateAttendingStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="AttendanceSetStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:AttendanceSetStatus" />
+  </wsdl:message>
+  <wsdl:message name="AttendanceSetStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:AttendanceSetStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="AttendanceGetStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:AttendanceGetStatus" />
+  </wsdl:message>
+  <wsdl:message name="AttendanceGetStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:AttendanceGetStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="EventGetPlayerAttendanceSoapIn">
+    <wsdl:part name="parameters" element="tns:EventGetPlayerAttendance" />
+  </wsdl:message>
+  <wsdl:message name="EventGetPlayerAttendanceSoapOut">
+    <wsdl:part name="parameters" element="tns:EventGetPlayerAttendanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectUserPlayerSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectUserPlayer" />
+  </wsdl:message>
+  <wsdl:message name="SelectUserPlayerSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectUserPlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectUserPlayerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectUserPlayerDetails" />
+  </wsdl:message>
+  <wsdl:message name="SelectUserPlayerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectUserPlayerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllPlayersForTeamSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllPlayersForTeam" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllPlayersForTeamSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllPlayersForTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectPlayerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectPlayerDetails" />
+  </wsdl:message>
+  <wsdl:message name="SelectPlayerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectPlayerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllPlayersForTeamForListsSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllPlayersForTeamForLists" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllPlayersForTeamForListsSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllPlayersForTeamForListsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllPlayersForTeamForListsWithImageSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllPlayersForTeamForListsWithImage" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllPlayersForTeamForListsWithImageSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllPlayersForTeamForListsWithImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveNewPlayerSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveNewPlayer" />
+  </wsdl:message>
+  <wsdl:message name="SaveNewPlayerSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveNewPlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePlayer" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerMobileVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerMobileVersion" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlayerMobileVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePlayerMobileVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllTasksForUserSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllTasksForUser" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllTasksForUserSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllTasksForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectTaskDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectTaskDetails" />
+  </wsdl:message>
+  <wsdl:message name="SelectTaskDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectTaskDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveTask" />
+  </wsdl:message>
+  <wsdl:message name="SaveTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTask" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectUserCoachDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectUserCoachDetails" />
+  </wsdl:message>
+  <wsdl:message name="SelectUserCoachDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectUserCoachDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCoachMobileVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCoachMobileVersion" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCoachMobileVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCoachMobileVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCoachesTeamsForComboSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCoachesTeamsForCombo" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCoachesTeamsForComboSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCoachesTeamsForComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCoachActiveTeamSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCoachActiveTeam" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCoachActiveTeamSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCoachActiveTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSingleEventDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSingleEventDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetSingleEventDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSingleEventDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPracticeDrillsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPracticeDrills" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPracticeDrillsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPracticeDrillsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPracticeDrillsAsDsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPracticeDrillsAsDs" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPracticeDrillsAsDsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPracticeDrillsAsDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQuadrantsForPracticeBlockSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQuadrantsForPracticeBlock" />
+  </wsdl:message>
+  <wsdl:message name="GetQuadrantsForPracticeBlockSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQuadrantsForPracticeBlockResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAssistantCoachModNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAssistantCoachModName" />
+  </wsdl:message>
+  <wsdl:message name="GetAssistantCoachModNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAssistantCoachModNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectSingleDrillDetailsForIosSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectSingleDrillDetailsForIos" />
+  </wsdl:message>
+  <wsdl:message name="SelectSingleDrillDetailsForIosSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectSingleDrillDetailsForIosResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllDrillsForAgeLevelMinSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllDrillsForAgeLevelMin" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllDrillsForAgeLevelMinSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllDrillsForAgeLevelMinResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDrillsForComboByCategoryAndIceTypeAndAgeLevelSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDrillsForComboByCategoryAndIceTypeAndAgeLevel" />
+  </wsdl:message>
+  <wsdl:message name="GetDrillsForComboByCategoryAndIceTypeAndAgeLevelSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDrillsForComboByCategoryAndIceTypeAndAgeLevelResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDrillsForComboByCategoryAndAgeLevelSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDrillsForComboByCategoryAndAgeLevel" />
+  </wsdl:message>
+  <wsdl:message name="GetDrillsForComboByCategoryAndAgeLevelSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDrillsForComboByCategoryAndAgeLevelResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectUserManagerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectUserManagerDetails" />
+  </wsdl:message>
+  <wsdl:message name="SelectUserManagerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectUserManagerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectUserManagerSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectUserManager" />
+  </wsdl:message>
+  <wsdl:message name="SelectUserManagerSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectUserManagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateManagerMobileVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateManagerMobileVersion" />
+  </wsdl:message>
+  <wsdl:message name="UpdateManagerMobileVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateManagerMobileVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectUserAssistantCoachDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectUserAssistantCoachDetails" />
+  </wsdl:message>
+  <wsdl:message name="SelectUserAssistantCoachDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectUserAssistantCoachDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectUserAssistantCoachSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectUserAssistantCoach" />
+  </wsdl:message>
+  <wsdl:message name="SelectUserAssistantCoachSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectUserAssistantCoachResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAssistantCoachMobileVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAssistantCoachMobileVersion" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAssistantCoachMobileVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAssistantCoachMobileVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDrillCategoriesDSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllDrillCategoriesDS" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDrillCategoriesDSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllDrillCategoriesDSResponse" />
+  </wsdl:message>
+  <wsdl:portType name="tdb_wsv_authSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCreds">
+      <wsdl:input message="tns:ValidateCredsSoapIn" />
+      <wsdl:output message="tns:ValidateCredsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLoggedInUser">
+      <wsdl:input message="tns:ValidateLoggedInUserSoapIn" />
+      <wsdl:output message="tns:ValidateLoggedInUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GrabCoachGUID">
+      <wsdl:input message="tns:GrabCoachGUIDSoapIn" />
+      <wsdl:output message="tns:GrabCoachGUIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllAssistantCoachesForTeam">
+      <wsdl:input message="tns:SelectAllAssistantCoachesForTeamSoapIn" />
+      <wsdl:output message="tns:SelectAllAssistantCoachesForTeamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllTeamsForCoach">
+      <wsdl:input message="tns:SelectAllTeamsForCoachSoapIn" />
+      <wsdl:output message="tns:SelectAllTeamsForCoachSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllEventsForTeam">
+      <wsdl:input message="tns:SelectAllEventsForTeamSoapIn" />
+      <wsdl:output message="tns:SelectAllEventsForTeamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectTeamDetail">
+      <wsdl:input message="tns:SelectTeamDetailSoapIn" />
+      <wsdl:output message="tns:SelectTeamDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserCoach">
+      <wsdl:input message="tns:SelectUserCoachSoapIn" />
+      <wsdl:output message="tns:SelectUserCoachSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TeamEventLocationSelectAllForTeam">
+      <wsdl:input message="tns:TeamEventLocationSelectAllForTeamSoapIn" />
+      <wsdl:output message="tns:TeamEventLocationSelectAllForTeamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TeamEventLocationSelectSingle">
+      <wsdl:input message="tns:TeamEventLocationSelectSingleSoapIn" />
+      <wsdl:output message="tns:TeamEventLocationSelectSingleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TeamEventLocationInsert">
+      <wsdl:input message="tns:TeamEventLocationInsertSoapIn" />
+      <wsdl:output message="tns:TeamEventLocationInsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TeamEventLocationUpdate">
+      <wsdl:input message="tns:TeamEventLocationUpdateSoapIn" />
+      <wsdl:output message="tns:TeamEventLocationUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TeamEventLocationSelectAllForTeamList">
+      <wsdl:input message="tns:TeamEventLocationSelectAllForTeamListSoapIn" />
+      <wsdl:output message="tns:TeamEventLocationSelectAllForTeamListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TeamOpponentSelectAll">
+      <wsdl:input message="tns:TeamOpponentSelectAllSoapIn" />
+      <wsdl:output message="tns:TeamOpponentSelectAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TeamOpponentSelectSingle">
+      <wsdl:input message="tns:TeamOpponentSelectSingleSoapIn" />
+      <wsdl:output message="tns:TeamOpponentSelectSingleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TeamOpponentInsert">
+      <wsdl:input message="tns:TeamOpponentInsertSoapIn" />
+      <wsdl:output message="tns:TeamOpponentInsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TeamOpponentUpdate">
+      <wsdl:input message="tns:TeamOpponentUpdateSoapIn" />
+      <wsdl:output message="tns:TeamOpponentUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TeamOpponentSelectAllForTeam">
+      <wsdl:input message="tns:TeamOpponentSelectAllForTeamSoapIn" />
+      <wsdl:output message="tns:TeamOpponentSelectAllForTeamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamAgeLevel">
+      <wsdl:input message="tns:GetTeamAgeLevelSoapIn" />
+      <wsdl:output message="tns:GetTeamAgeLevelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllEventsForTeamByType">
+      <wsdl:input message="tns:SelectAllEventsForTeamByTypeSoapIn" />
+      <wsdl:output message="tns:SelectAllEventsForTeamByTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllEventsForTeamByTypeTodayForward">
+      <wsdl:input message="tns:SelectAllEventsForTeamByTypeTodayForwardSoapIn" />
+      <wsdl:output message="tns:SelectAllEventsForTeamByTypeTodayForwardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllEventsForTeamByDateForward">
+      <wsdl:input message="tns:SelectAllEventsForTeamByDateForwardSoapIn" />
+      <wsdl:output message="tns:SelectAllEventsForTeamByDateForwardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectSingleEventDetail">
+      <wsdl:input message="tns:SelectSingleEventDetailSoapIn" />
+      <wsdl:output message="tns:SelectSingleEventDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSingleEventInstance">
+      <wsdl:input message="tns:GetSingleEventInstanceSoapIn" />
+      <wsdl:output message="tns:GetSingleEventInstanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEvent">
+      <wsdl:input message="tns:InsertEventSoapIn" />
+      <wsdl:output message="tns:InsertEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEvent">
+      <wsdl:input message="tns:UpdateEventSoapIn" />
+      <wsdl:output message="tns:UpdateEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EventUpdateAttendingStatus">
+      <wsdl:input message="tns:EventUpdateAttendingStatusSoapIn" />
+      <wsdl:output message="tns:EventUpdateAttendingStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AttendanceSetStatus">
+      <wsdl:input message="tns:AttendanceSetStatusSoapIn" />
+      <wsdl:output message="tns:AttendanceSetStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AttendanceGetStatus">
+      <wsdl:input message="tns:AttendanceGetStatusSoapIn" />
+      <wsdl:output message="tns:AttendanceGetStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EventGetPlayerAttendance">
+      <wsdl:input message="tns:EventGetPlayerAttendanceSoapIn" />
+      <wsdl:output message="tns:EventGetPlayerAttendanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserPlayer">
+      <wsdl:input message="tns:SelectUserPlayerSoapIn" />
+      <wsdl:output message="tns:SelectUserPlayerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserPlayerDetails">
+      <wsdl:input message="tns:SelectUserPlayerDetailsSoapIn" />
+      <wsdl:output message="tns:SelectUserPlayerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllPlayersForTeam">
+      <wsdl:input message="tns:SelectAllPlayersForTeamSoapIn" />
+      <wsdl:output message="tns:SelectAllPlayersForTeamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectPlayerDetails">
+      <wsdl:input message="tns:SelectPlayerDetailsSoapIn" />
+      <wsdl:output message="tns:SelectPlayerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllPlayersForTeamForLists">
+      <wsdl:input message="tns:SelectAllPlayersForTeamForListsSoapIn" />
+      <wsdl:output message="tns:SelectAllPlayersForTeamForListsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllPlayersForTeamForListsWithImage">
+      <wsdl:input message="tns:SelectAllPlayersForTeamForListsWithImageSoapIn" />
+      <wsdl:output message="tns:SelectAllPlayersForTeamForListsWithImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveNewPlayer">
+      <wsdl:input message="tns:SaveNewPlayerSoapIn" />
+      <wsdl:output message="tns:SaveNewPlayerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayer">
+      <wsdl:input message="tns:UpdatePlayerSoapIn" />
+      <wsdl:output message="tns:UpdatePlayerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerMobileVersion">
+      <wsdl:input message="tns:UpdatePlayerMobileVersionSoapIn" />
+      <wsdl:output message="tns:UpdatePlayerMobileVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllTasksForUser">
+      <wsdl:input message="tns:SelectAllTasksForUserSoapIn" />
+      <wsdl:output message="tns:SelectAllTasksForUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectTaskDetails">
+      <wsdl:input message="tns:SelectTaskDetailsSoapIn" />
+      <wsdl:output message="tns:SelectTaskDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTask">
+      <wsdl:input message="tns:SaveTaskSoapIn" />
+      <wsdl:output message="tns:SaveTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTask">
+      <wsdl:input message="tns:UpdateTaskSoapIn" />
+      <wsdl:output message="tns:UpdateTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserCoachDetails">
+      <wsdl:input message="tns:SelectUserCoachDetailsSoapIn" />
+      <wsdl:output message="tns:SelectUserCoachDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCoachMobileVersion">
+      <wsdl:input message="tns:UpdateCoachMobileVersionSoapIn" />
+      <wsdl:output message="tns:UpdateCoachMobileVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCoachesTeamsForCombo">
+      <wsdl:input message="tns:GetAllCoachesTeamsForComboSoapIn" />
+      <wsdl:output message="tns:GetAllCoachesTeamsForComboSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCoachActiveTeam">
+      <wsdl:input message="tns:UpdateCoachActiveTeamSoapIn" />
+      <wsdl:output message="tns:UpdateCoachActiveTeamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSingleEventDetails">
+      <wsdl:input message="tns:GetSingleEventDetailsSoapIn" />
+      <wsdl:output message="tns:GetSingleEventDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPracticeDrills">
+      <wsdl:input message="tns:GetAllPracticeDrillsSoapIn" />
+      <wsdl:output message="tns:GetAllPracticeDrillsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPracticeDrillsAsDs">
+      <wsdl:input message="tns:GetAllPracticeDrillsAsDsSoapIn" />
+      <wsdl:output message="tns:GetAllPracticeDrillsAsDsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuadrantsForPracticeBlock">
+      <wsdl:input message="tns:GetQuadrantsForPracticeBlockSoapIn" />
+      <wsdl:output message="tns:GetQuadrantsForPracticeBlockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssistantCoachModName">
+      <wsdl:input message="tns:GetAssistantCoachModNameSoapIn" />
+      <wsdl:output message="tns:GetAssistantCoachModNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectSingleDrillDetailsForIos">
+      <wsdl:input message="tns:SelectSingleDrillDetailsForIosSoapIn" />
+      <wsdl:output message="tns:SelectSingleDrillDetailsForIosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllDrillsForAgeLevelMin">
+      <wsdl:input message="tns:SelectAllDrillsForAgeLevelMinSoapIn" />
+      <wsdl:output message="tns:SelectAllDrillsForAgeLevelMinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDrillsForComboByCategoryAndIceTypeAndAgeLevel">
+      <wsdl:input message="tns:GetDrillsForComboByCategoryAndIceTypeAndAgeLevelSoapIn" />
+      <wsdl:output message="tns:GetDrillsForComboByCategoryAndIceTypeAndAgeLevelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDrillsForComboByCategoryAndAgeLevel">
+      <wsdl:input message="tns:GetDrillsForComboByCategoryAndAgeLevelSoapIn" />
+      <wsdl:output message="tns:GetDrillsForComboByCategoryAndAgeLevelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserManagerDetails">
+      <wsdl:input message="tns:SelectUserManagerDetailsSoapIn" />
+      <wsdl:output message="tns:SelectUserManagerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserManager">
+      <wsdl:input message="tns:SelectUserManagerSoapIn" />
+      <wsdl:output message="tns:SelectUserManagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateManagerMobileVersion">
+      <wsdl:input message="tns:UpdateManagerMobileVersionSoapIn" />
+      <wsdl:output message="tns:UpdateManagerMobileVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserAssistantCoachDetails">
+      <wsdl:input message="tns:SelectUserAssistantCoachDetailsSoapIn" />
+      <wsdl:output message="tns:SelectUserAssistantCoachDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserAssistantCoach">
+      <wsdl:input message="tns:SelectUserAssistantCoachSoapIn" />
+      <wsdl:output message="tns:SelectUserAssistantCoachSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAssistantCoachMobileVersion">
+      <wsdl:input message="tns:UpdateAssistantCoachMobileVersionSoapIn" />
+      <wsdl:output message="tns:UpdateAssistantCoachMobileVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDrillCategoriesDS">
+      <wsdl:input message="tns:GetAllDrillCategoriesDSSoapIn" />
+      <wsdl:output message="tns:GetAllDrillCategoriesDSSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="tdb_wsv_authSoap" type="tns:tdb_wsv_authSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCreds">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/ValidateCreds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLoggedInUser">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/ValidateLoggedInUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GrabCoachGUID">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/GrabCoachGUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllAssistantCoachesForTeam">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllAssistantCoachesForTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllTeamsForCoach">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllTeamsForCoach" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllEventsForTeam">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllEventsForTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectTeamDetail">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectTeamDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserCoach">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectUserCoach" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamEventLocationSelectAllForTeam">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/TeamEventLocationSelectAllForTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamEventLocationSelectSingle">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/TeamEventLocationSelectSingle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamEventLocationInsert">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/TeamEventLocationInsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamEventLocationUpdate">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/TeamEventLocationUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamEventLocationSelectAllForTeamList">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/TeamEventLocationSelectAllForTeamList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamOpponentSelectAll">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/TeamOpponentSelectAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamOpponentSelectSingle">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/TeamOpponentSelectSingle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamOpponentInsert">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/TeamOpponentInsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamOpponentUpdate">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/TeamOpponentUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamOpponentSelectAllForTeam">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/TeamOpponentSelectAllForTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamAgeLevel">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/GetTeamAgeLevel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllEventsForTeamByType">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllEventsForTeamByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllEventsForTeamByTypeTodayForward">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllEventsForTeamByTypeTodayForward" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllEventsForTeamByDateForward">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllEventsForTeamByDateForward" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectSingleEventDetail">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectSingleEventDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSingleEventInstance">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/GetSingleEventInstance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEvent">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/InsertEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEvent">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/UpdateEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventUpdateAttendingStatus">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/EventUpdateAttendingStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AttendanceSetStatus">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/AttendanceSetStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AttendanceGetStatus">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/AttendanceGetStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventGetPlayerAttendance">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/EventGetPlayerAttendance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserPlayer">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectUserPlayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserPlayerDetails">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectUserPlayerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllPlayersForTeam">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllPlayersForTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectPlayerDetails">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectPlayerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllPlayersForTeamForLists">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllPlayersForTeamForLists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllPlayersForTeamForListsWithImage">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllPlayersForTeamForListsWithImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveNewPlayer">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SaveNewPlayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayer">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/UpdatePlayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerMobileVersion">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/UpdatePlayerMobileVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllTasksForUser">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllTasksForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectTaskDetails">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectTaskDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTask">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SaveTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTask">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/UpdateTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserCoachDetails">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectUserCoachDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCoachMobileVersion">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/UpdateCoachMobileVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCoachesTeamsForCombo">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/GetAllCoachesTeamsForCombo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCoachActiveTeam">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/UpdateCoachActiveTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSingleEventDetails">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/GetSingleEventDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPracticeDrills">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/GetAllPracticeDrills" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPracticeDrillsAsDs">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/GetAllPracticeDrillsAsDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuadrantsForPracticeBlock">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/GetQuadrantsForPracticeBlock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssistantCoachModName">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/GetAssistantCoachModName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectSingleDrillDetailsForIos">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectSingleDrillDetailsForIos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllDrillsForAgeLevelMin">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllDrillsForAgeLevelMin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDrillsForComboByCategoryAndIceTypeAndAgeLevel">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/GetDrillsForComboByCategoryAndIceTypeAndAgeLevel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDrillsForComboByCategoryAndAgeLevel">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/GetDrillsForComboByCategoryAndAgeLevel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserManagerDetails">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectUserManagerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserManager">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectUserManager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateManagerMobileVersion">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/UpdateManagerMobileVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserAssistantCoachDetails">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectUserAssistantCoachDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserAssistantCoach">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/SelectUserAssistantCoach" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAssistantCoachMobileVersion">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/UpdateAssistantCoachMobileVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDrillCategoriesDS">
+      <soap:operation soapAction="http://www.thedrillbook.com/webserv/GetAllDrillCategoriesDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="tdb_wsv_authSoap12" type="tns:tdb_wsv_authSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCreds">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/ValidateCreds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLoggedInUser">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/ValidateLoggedInUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GrabCoachGUID">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/GrabCoachGUID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllAssistantCoachesForTeam">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllAssistantCoachesForTeam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllTeamsForCoach">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllTeamsForCoach" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllEventsForTeam">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllEventsForTeam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectTeamDetail">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectTeamDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserCoach">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectUserCoach" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamEventLocationSelectAllForTeam">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/TeamEventLocationSelectAllForTeam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamEventLocationSelectSingle">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/TeamEventLocationSelectSingle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamEventLocationInsert">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/TeamEventLocationInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamEventLocationUpdate">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/TeamEventLocationUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamEventLocationSelectAllForTeamList">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/TeamEventLocationSelectAllForTeamList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamOpponentSelectAll">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/TeamOpponentSelectAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamOpponentSelectSingle">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/TeamOpponentSelectSingle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamOpponentInsert">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/TeamOpponentInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamOpponentUpdate">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/TeamOpponentUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TeamOpponentSelectAllForTeam">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/TeamOpponentSelectAllForTeam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamAgeLevel">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/GetTeamAgeLevel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllEventsForTeamByType">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllEventsForTeamByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllEventsForTeamByTypeTodayForward">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllEventsForTeamByTypeTodayForward" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllEventsForTeamByDateForward">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllEventsForTeamByDateForward" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectSingleEventDetail">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectSingleEventDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSingleEventInstance">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/GetSingleEventInstance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEvent">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/InsertEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEvent">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/UpdateEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventUpdateAttendingStatus">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/EventUpdateAttendingStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AttendanceSetStatus">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/AttendanceSetStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AttendanceGetStatus">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/AttendanceGetStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventGetPlayerAttendance">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/EventGetPlayerAttendance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserPlayer">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectUserPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserPlayerDetails">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectUserPlayerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllPlayersForTeam">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllPlayersForTeam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectPlayerDetails">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectPlayerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllPlayersForTeamForLists">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllPlayersForTeamForLists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllPlayersForTeamForListsWithImage">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllPlayersForTeamForListsWithImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveNewPlayer">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SaveNewPlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayer">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/UpdatePlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlayerMobileVersion">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/UpdatePlayerMobileVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllTasksForUser">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllTasksForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectTaskDetails">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectTaskDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTask">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SaveTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTask">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/UpdateTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserCoachDetails">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectUserCoachDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCoachMobileVersion">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/UpdateCoachMobileVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCoachesTeamsForCombo">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/GetAllCoachesTeamsForCombo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCoachActiveTeam">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/UpdateCoachActiveTeam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSingleEventDetails">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/GetSingleEventDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPracticeDrills">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/GetAllPracticeDrills" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPracticeDrillsAsDs">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/GetAllPracticeDrillsAsDs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuadrantsForPracticeBlock">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/GetQuadrantsForPracticeBlock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssistantCoachModName">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/GetAssistantCoachModName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectSingleDrillDetailsForIos">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectSingleDrillDetailsForIos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllDrillsForAgeLevelMin">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectAllDrillsForAgeLevelMin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDrillsForComboByCategoryAndIceTypeAndAgeLevel">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/GetDrillsForComboByCategoryAndIceTypeAndAgeLevel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDrillsForComboByCategoryAndAgeLevel">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/GetDrillsForComboByCategoryAndAgeLevel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserManagerDetails">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectUserManagerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserManager">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectUserManager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateManagerMobileVersion">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/UpdateManagerMobileVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserAssistantCoachDetails">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectUserAssistantCoachDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUserAssistantCoach">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/SelectUserAssistantCoach" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAssistantCoachMobileVersion">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/UpdateAssistantCoachMobileVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDrillCategoriesDS">
+      <soap12:operation soapAction="http://www.thedrillbook.com/webserv/GetAllDrillCategoriesDS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="tdb_wsv_auth">
+    <wsdl:port name="tdb_wsv_authSoap" binding="tns:tdb_wsv_authSoap">
+      <soap:address location="http://www.thedrillbook.com/webserv/tdb-wsv-auth.asmx" />
+    </wsdl:port>
+    <wsdl:port name="tdb_wsv_authSoap12" binding="tns:tdb_wsv_authSoap12">
+      <soap12:address location="http://www.thedrillbook.com/webserv/tdb-wsv-auth.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

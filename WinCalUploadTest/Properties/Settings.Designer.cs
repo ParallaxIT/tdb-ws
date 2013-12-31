@@ -32,5 +32,15 @@ namespace WinCalUploadTest.Properties {
                 return ((string)(this["WinCalUploadTest_TDBWebService_CalUploader"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://www.thedrillbook.com/webserv/tdb-wsv-auth.asmx")]
+        public string WinCalUploadTest_TDBMainWebService_tdb_wsv_auth {
+            get {
+                return ((string)(this["WinCalUploadTest_TDBMainWebService_tdb_wsv_auth"]));
+            }
+        }
     }
 }
