@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Web.Services;
+using tdb_cal.classes;
 
 namespace tdb_cal
 {
@@ -153,6 +154,25 @@ namespace tdb_cal
             {
                 // return the error message if the operation fails
                 return ex.Message;
+            }
+        }
+
+        /// <summary>
+        /// CreatePDFFromHTMLFile
+        /// </summary>
+        /// <param name="htmlStream"></param>
+        /// <param name="title"></param>
+        /// <returns></returns>
+        [WebMethod]
+        public byte[] CreatePDFFromHTMLFile(string htmlStream, string title)
+        {
+            try
+            {
+                return string.IsNullOrEmpty(htmlStream) ? null : HTMLtoPDF.GeneratePDF(htmlStream, title, 36, 36, 36, 36);
+            }
+            catch (Exception)
+            {
+                return null;
             }
         }
     }
