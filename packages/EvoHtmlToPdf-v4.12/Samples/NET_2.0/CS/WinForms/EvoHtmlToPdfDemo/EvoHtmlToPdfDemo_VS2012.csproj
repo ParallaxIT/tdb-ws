@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0EBD85EB-677A-4C6F-A1DA-CE6DD21D402B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EvoHtmlToPdfDemo</RootNamespace>
+    <AssemblyName>EvoHtmlToPdfDemo</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="evohtmltopdf">
+      <HintPath>..\..\..\..\..\Bin\evohtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConvertHtmlString.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConvertHtmlString.designer.cs">
+      <DependentUpon>ConvertHtmlString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConvertMultipleURLsToPdf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConvertMultipleURLsToPdf.designer.cs">
+      <DependentUpon>ConvertMultipleURLsToPdf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppendPrependExternalPdf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppendPrependExternalPdf.Designer.cs">
+      <DependentUpon>AppendPrependExternalPdf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DigitalSignature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DigitalSignature.designer.cs">
+      <DependentUpon>DigitalSignature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageElementDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageElementDemo.Designer.cs">
+      <DependentUpon>ImageElementDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfStamps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PdfStamps.Designer.cs">
+      <DependentUpon>PdfStamps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SvgToPdfDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SvgToPdfDemo.designer.cs">
+      <DependentUpon>SvgToPdfDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextAndFonts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextAndFonts.designer.cs">
+      <DependentUpon>TextAndFonts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSecurity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PdfSecurity.designer.cs">
+      <DependentUpon>PdfSecurity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShapesDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShapesDemo.designer.cs">
+      <DependentUpon>ShapesDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlInHeaderAndFooter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HtmlInHeaderAndFooter.designer.cs">
+      <DependentUpon>HtmlInHeaderAndFooter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlElementsLocationInPdf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HtmlElementsLocationInPdf.designer.cs">
+      <DependentUpon>HtmlElementsLocationInPdf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFeaturesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFeaturesForm.designer.cs">
+      <DependentUpon>MainFeaturesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConvertHtmlString.resx">
+      <DependentUpon>ConvertHtmlString.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConvertMultipleURLsToPdf.resx">
+      <DependentUpon>ConvertMultipleURLsToPdf.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppendPrependExternalPdf.resx">
+      <DependentUpon>AppendPrependExternalPdf.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DigitalSignature.resx">
+      <DependentUpon>DigitalSignature.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageElementDemo.resx">
+      <DependentUpon>ImageElementDemo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfStamps.resx">
+      <DependentUpon>PdfStamps.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SvgToPdfDemo.resx">
+      <DependentUpon>SvgToPdfDemo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextAndFonts.resx">
+      <DependentUpon>TextAndFonts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSecurity.resx">
+      <DependentUpon>PdfSecurity.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShapesDemo.resx">
+      <DependentUpon>ShapesDemo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HtmlInHeaderAndFooter.resx">
+      <DependentUpon>HtmlInHeaderAndFooter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HtmlElementsLocationInPdf.resx">
+      <DependentUpon>HtmlElementsLocationInPdf.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFeaturesForm.resx">
+      <DependentUpon>MainFeaturesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepeatTableHeadOnEachPage.resx">
+      <DependentUpon>RepeatTableHeadOnEachPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableOfContentsAndBookmarks.resx">
+      <DependentUpon>TableOfContentsAndBookmarks.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HtmlToPdfElementDemo.resx">
+      <DependentUpon>HtmlToPdfElementDemo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Certificates\evopdf.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RepeatTableHeadOnEachPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RepeatTableHeadOnEachPage.Designer.cs">
+      <DependentUpon>RepeatTableHeadOnEachPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableOfContentsAndBookmarks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableOfContentsAndBookmarks.Designer.cs">
+      <DependentUpon>TableOfContentsAndBookmarks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlToPdfElementDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HtmlToPdfElementDemo.Designer.cs">
+      <DependentUpon>HtmlToPdfElementDemo.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HeaderFooter\HeaderAndFooterHtml.htm" />
+    <Content Include="HeaderFooter\HeaderAndFooterHtml2.htm" />
+    <Content Include="HeaderFooter\Img\logo.jpg" />
+    <Content Include="HtmlBook\Book.htm" />
+    <Content Include="HtmlBook\images\evo.ico" />
+    <Content Include="HtmlBook\images\html-to-pdf-box.jpg" />
+    <Content Include="HtmlBook\images\logo.jpg" />
+    <Content Include="HtmlBook\styles\csharp.css" />
+    <Content Include="HtmlBook\styles\styles.css" />
+    <Content Include="HtmlTable\img\calendar.jpg" />
+    <Content Include="HtmlTable\img\clock.jpg" />
+    <Content Include="HtmlTable\img\usericon.jpg" />
+    <Content Include="HtmlTable\table_with_repeated_head.html" />
+    <None Include="ExternalPdfs\book.pdf" />
+    <None Include="Img\evologo-250.png" />
+    <Content Include="Img\evo.ico" />
+    <Content Include="Img\evologo-100-trans.png" />
+    <Content Include="Img\evologo-100.jpg" />
+    <Content Include="Img\logo.jpg" />
+    <Content Include="Svg\svg.html" />
+    <Content Include="Svg\svginline.xml" />
+    <None Include="Img\pdficon-20.png" />
+    <None Include="Svg\textonshape.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

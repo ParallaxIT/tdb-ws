@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>EVO HTML to PDF Converter - SVG to PDF Demo</title>
+    <style type="text/css"> 
+ <!--
+ body { font-family: verdana, helvetica, sans-serif; line-height: 1.3; text-align: left; margin-top: 0; margin-bottom: 0 }
+ -->
+ </style>
+</head>
+<body class="bodytext">
+    <table border="0" cellspacing="0" cellpadding="10" style="text-align: center; width: 600px; height: 400px">
+        <tr>
+            <td align="center" colspan="4">
+                <table border="0" cellpadding="8">
+                    <tr>
+                        <td align="center" colspan="3">
+                            <h1>
+                                Text on a Shape in SVG</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 500px; height: 400px">
+                            <svg version="1.1" baseprofile="basic" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                id="svg-root" width="100%" height="100%" viewbox="0 0 500 400">
+	                            <title id="titleId">Text on a shape</title>
+	                            <desc id="descId">Test the EVO HTML to PDF Converter capabilities to render text on a shape</desc>
+	                            <g id="bodyContent"> 
+		                            <defs>
+			                            <path id="path1" fill="none" stroke="red"  d="M199 89.3 C206.6 66.6 235.8 13.2 270 30.3 286.6 38.6 298.9 59.4 310 73.3 321.7 87.9 338.6      99 356 103.3 387.3 111.1 396.6 90.4 418 74.3"/>
+			                            <path id="path2" fill="none" stroke="red"  d="M33.5 145.8 C41 123 70.3 69.7 104.5 86.8 121 95 133 116 144.5 129.8 156.2 144.4 173 155.5     190.5 159.8 221.8 167.6 231 146.9 252.5 130.8"/>
+			                            <path id="path3" fill="none" stroke="red" stroke-width="4"  d="M113 233 L413 233 "/>
+		                            </defs>
+		                            <g id="tos1">
+			                            <use xlink:href="#path1" fill="none" stroke="green" />
+			                            <text font-size="36" font-family="Verdana" fill="black" >
+				                            <textPath xlink:href="#path1"> Text on shape</textPath>
+			                            </text>
+		                            </g>
+		                            <g id="tos2">
+			                            <use xlink:href="#path2" fill="none" stroke="green" />
+			                            <text font-size="36" font-family="Verdana" fill="black" >
+				                            <textPath xlink:href="#path2"><tspan dy="-6" fill="blue">Te</tspan><tspan dy="6">x</tspan>t on shape</textPath>
+			                            </text>
+                            			
+		                            </g>
+	                            </g>
+	                            <text id="id0" x="10" y="260" font-size="16" stroke="none" fill="black">EVO HTML to PDF Converter for .NET</text>
+	                            <rect id="test-frame" x="1" y="1" width="498" height="298" fill="none" stroke="#000000"/>
+                            </svg>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

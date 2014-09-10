@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AE34E711-EA67-48A7-B3A6-99B94E71727D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EvoHtmlToPdfWebDemo</RootNamespace>
+    <AssemblyName>EvoHtmlToPdfWebDemo</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="evohtmltopdf, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Bin\evohtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppendExternalPDFs.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>AppendExternalPDFs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppendExternalPDFs.aspx.designer.cs">
+      <DependentUpon>AppendExternalPDFs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConvertMultipleURLs.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ConvertMultipleURLs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConvertMultipleURLs.aspx.designer.cs">
+      <DependentUpon>ConvertMultipleURLs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DemoLinksBox.ascx.cs">
+      <DependentUpon>DemoLinksBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DemoLinksBox.ascx.designer.cs">
+      <DependentUpon>DemoLinksBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlElementsLocation.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>HtmlElementsLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlElementsLocation.aspx.designer.cs">
+      <DependentUpon>HtmlElementsLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlInHeaderAndFooter.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>HtmlInHeaderAndFooter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlInHeaderAndFooter.aspx.designer.cs">
+      <DependentUpon>HtmlInHeaderAndFooter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlToPdfElementDemo.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>HtmlToPdfElementDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlToPdfElementDemo.aspx.designer.cs">
+      <DependentUpon>HtmlToPdfElementDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlToPdfFeaturesDemo.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>HtmlToPdfFeaturesDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlToPdfFeaturesDemo.aspx.designer.cs">
+      <DependentUpon>HtmlToPdfFeaturesDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImageElementDemo.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ImageElementDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImageElementDemo.aspx.designer.cs">
+      <DependentUpon>ImageElementDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceData.cs" />
+    <Compile Include="InvoiceTemplate.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>InvoiceTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceTemplate.aspx.designer.cs">
+      <DependentUpon>InvoiceTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PdfInvoicesDemo.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>PdfInvoicesDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PdfInvoicesDemo.aspx.designer.cs">
+      <DependentUpon>PdfInvoicesDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSecurity.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>PdfSecurity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSecurity.aspx.designer.cs">
+      <DependentUpon>PdfSecurity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PdfShapes.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>PdfShapes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PdfShapes.aspx.designer.cs">
+      <DependentUpon>PdfShapes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PdfStamps.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>PdfStamps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PdfStamps.aspx.designer.cs">
+      <DependentUpon>PdfStamps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepeatTableHead.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RepeatTableHead.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RepeatTableHead.aspx.designer.cs">
+      <DependentUpon>RepeatTableHead.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SvgToPdfDemo.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>SvgToPdfDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SvgToPdfDemo.aspx.designer.cs">
+      <DependentUpon>SvgToPdfDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TableOfContentsAndBookmarks.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>TableOfContentsAndBookmarks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TableOfContentsAndBookmarks.aspx.designer.cs">
+      <DependentUpon>TableOfContentsAndBookmarks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TextAndFonts.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>TextAndFonts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TextAndFonts.aspx.designer.cs">
+      <DependentUpon>TextAndFonts.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppendExternalPDFs.aspx" />
+    <Content Include="ConvertMultipleURLs.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="DemoLinksBox.ascx" />
+    <Content Include="HeaderFooter\HeaderAndFooterHtml.htm" />
+    <Content Include="HeaderFooter\HeaderAndFooterHtml2.htm" />
+    <Content Include="HeaderFooter\Img\logo.jpg" />
+    <Content Include="HtmlBook\Book.htm" />
+    <Content Include="HtmlBook\images\evo.ico" />
+    <Content Include="HtmlBook\images\html-to-pdf-box.jpg" />
+    <Content Include="HtmlBook\images\logo.jpg" />
+    <Content Include="HtmlBook\styles\csharp.css" />
+    <Content Include="HtmlBook\styles\styles.css" />
+    <Content Include="HtmlElementsLocation.aspx" />
+    <Content Include="HtmlInHeaderAndFooter.aspx" />
+    <Content Include="HtmlTable\img\calendar.jpg" />
+    <Content Include="HtmlTable\img\clock.jpg" />
+    <Content Include="HtmlTable\img\usericon.jpg" />
+    <Content Include="HtmlTable\table_with_repeated_head.html" />
+    <Content Include="HtmlToPdfElementDemo.aspx" />
+    <Content Include="HtmlToPdfFeaturesDemo.aspx" />
+    <Content Include="ImageElementDemo.aspx" />
+    <Content Include="Images\evo.ico" />
+    <Content Include="Images\evologo-100-trans.png" />
+    <Content Include="Images\evologo-100.jpg" />
+    <Content Include="Images\evologo-250.png" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\pdficon-20.png" />
+    <Content Include="InvoiceTemplate.aspx" />
+    <Content Include="MasterPage.Master" />
+    <Content Include="PdfInvoicesDemo.aspx" />
+    <Content Include="PdfSecurity.aspx" />
+    <Content Include="PdfShapes.aspx" />
+    <Content Include="PdfStamps.aspx" />
+    <Content Include="RepeatTableHead.aspx" />
+    <Content Include="Styles\csharp.css" />
+    <Content Include="Styles\evo_demo_styles.css" />
+    <Content Include="SvgToPdfDemo.aspx" />
+    <Content Include="Svg\svg.html" />
+    <Content Include="Svg\svginline.xml" />
+    <Content Include="TableOfContentsAndBookmarks.aspx" />
+    <Content Include="TextAndFonts.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Certificates\evopdf.pfx" />
+    <None Include="ExternalPdfs\book.pdf" />
+    <None Include="Svg\textonshape.svg" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52093</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

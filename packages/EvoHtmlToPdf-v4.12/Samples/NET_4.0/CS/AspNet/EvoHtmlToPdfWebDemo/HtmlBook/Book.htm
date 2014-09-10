@@ -1,0 +1,1324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>EVO HTML to PDF Converter for .NET</title>
+    <link href="styles/styles.css" rel="stylesheet" type="text/css" />
+    <link href="styles/csharp.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div style="width: 1024px">
+        <table width="100%">
+            <tr>
+                <td colspan="2" style="height: 62px">
+                    <!-- Header -->
+                    <table style="width: 100%">
+                        <tr>
+                            <td style="width: 707px"></td>
+                            <td>
+                                <img alt="EvoPdf Logo" src="images/logo.jpg" height="50" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 5%"></td>
+                <td style="width: 95%">
+                    <!-- Content -->
+                    <table width="90%">
+                        <tr>
+                            <td style="height: 189px;"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 40px;">
+                                <span class="doctitle">EVO HTML to PDF Converter for .NET</span>&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 33px;"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="title1">Developer's Manual</span><br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 77px"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td style="width: 73px"></td>
+                                        <td>
+                                            <a href="http://www.evopdf.com">
+                                                <img alt="EVO HTML to PDF COnverter Box" style="border-style: none" src="images/html-to-pdf-box.jpg" /></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 22px"></td>
+                        </tr>
+                        <tr style="page-break-before: always">
+                            <td class="title1" style="height: 23px">
+                                <a name="TOC" class="bookmark">Table of Contents</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <table>
+                                    <tr>
+                                        <td colspan="2" style="height: 30px">
+                                            <a id="TOCEntry_1_ID" class="contents" href="#Introduction">1. Introduction </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="height: 30px">
+                                            <a id="TOCEntry_2_ID" class="contents" href="#Installation">2. Installation </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="height: 30px">
+                                            <a id="TOCEntry_3_ID" class="contents" href="#Requirements">3. Requirements </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="height: 30px">
+                                            <a id="TOCEntry_4_ID" class="contents" href="#API">4. Converter API </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="height: 30px">
+                                            <a id="TOCEntry_5_ID" class="contents" href="#Features">5. Features </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 63px"></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 63px"></td>
+                                        <td>
+                                            <a id="TOCEntry_6_ID" class="title4" href="#HeaderAndFooter">5.1 Headers and Footers</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 63px"></td>
+                                        <td class="title4">
+                                            <a id="TOCEntry_7_ID" class="title4" href="#SecurityOptions">5.2 Security Options</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 63px"></td>
+                                        <td class="title4">
+                                            <a id="TOCEntry_8_ID" class="title4" href="#DocumentDescription">5.3 Document Description</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 63px"></td>
+                                        <td class="title4">
+                                            <a id="TOCEntry_9_ID" class="title4" href="#PageBreaks">5.4 Automatic and Custom Page
+                                                Breaks, Keep Together</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 63px"></td>
+                                        <td class="title4">
+                                            <a id="TOCEntry_10_ID" class="title4" href="#LiveLinks">5.5 Live HTTP Links</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 63px"></td>
+                                        <td class="title4">
+                                            <a id="TOCEntry_11_ID" class="title4" href="#MergeCapabilities">5.6 Merge Capabilities</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 63px"></td>
+                                        <td class="title4">
+                                            <a id="TOCEntry_12_ID" class="title4" href="#ClientScripts">5.7 Enable/Disable Client
+                                                Scripts and ActiveX from HTML Page</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 63px"></td>
+                                        <td class="title4">
+                                            <a id="TOCEntry_13_ID" class="title4" href="#ServerAuthentication">5.8 Server Authentication</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 63px"></td>
+                                        <td class="title4">
+                                            <a id="TOCEntry_14_ID" class="title4" href="#CustomPageSize">5.9 Custom PDF Page Size</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 63px"></td>
+                                        <td class="title4">
+                                            <a id="TOCEntry_15_ID" class="title4" href="#Bookmarks">5.10 Bookmarks</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="height: 30px">
+                                            <a id="TOCEntry_16_ID" class="contents" href="#Licensing">6. Licensing </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr style="page-break-before: always">
+                            <td style="height: 23px" class="title2">
+                                <a id="TOCEntry_1_Target_ID" name="Introduction" class="bookmark">1. Introduction</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px; text-align: justify">The EVO HTML to PDF Converter for .NET consists in a .NET library that can be used
+                                directly in any .NET application (ASP.NET, Windows Forms, Console, Web Services,
+                                Windows Services, etc).
+                                <br />
+                                <br />
+                                The converter does not require any installation and it does not use any printer
+                                driver to perform conversion. It's just an assembly that you can directly link with
+                                your .NET application. The full HTML / CSS set is supported and the main goal of
+                                the converter is to preserve unchanged the original aspect of the converted HTML
+                                page.<br />
+                                <br />
+                                It can be used as general purpose tool for converting web pages and HTML code to
+                                PDF or as part of our Reporting Toolkit for .NET to easily create PDF reports directly
+                                from ASP.NET pages. If you think that the converted ASP.NET page can contain your
+                                preferred server controls like charts, barcodes, data bound control like data grids
+                                and repeaters you can realize how powerful this tool can be.<br />
+                                <br />
+                                The converter API offers methods to convert a web page from a specified URL to PDF
+                                or a specified HTML string. Additionally you can convert web pages and HTML code
+                                to images in any format supported by .NET 2.0 framework (BMP, JPEG, PNG, GIF, etc).&nbsp;<br />
+                                <br />
+                                If you want to get started immediately without reading the next sections of this
+                                document this is something perfectly possible. First you have to add a reference
+                                to the converter library assembly <em><strong>evohtmltopdf.dll</strong></em> in
+                                your .NET or ASP.NET project. Then you have to add the following two lines of code
+                                in your application. The first one will import the converter namespace and the second
+                                one will call the converter to render the web page from the specified url as an
+                                array of bytes representing the resulted PDF document:<br />
+                                <br />
+                                <table>
+                                    <tr>
+                                        <td style="width: 89px"></td>
+                                        <td>
+                                            <div class="csharpcode">
+                                                <pre class="alt"><span class="lnum">1: </span><span class="kwrd">using</span> EvoPdf; </pre>
+                                                <pre><span class="lnum">2: </span><span class="kwrd">byte</span>[] pdfBytes = <span
+                                                    class="kwrd">new</span> PdfConverter().GetPdf<span style="font-size: 10.5pt; color: #000000;
+                                                        font-family: Trebuchet MS">Bytes</span>FromUrl(url);</pre>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br />
+                                Further you can save the PDF document bytes into a file on disk or you can send
+                                the bytes as a response to the client browser. We provide full sample applications,
+                                both in C# and VB.NET to exemplify both situations.<br />
+                                <br />
+                                The code above will produce a PDF document based on the default settings of the
+                                library which is enough for the most of the situations. However, the converter library
+                                offers a large number of parameters that you can set to customize the conversion
+                                process. You can add headers and footers with text and images to the resulted PDF
+                                document, specify page orientation, page size, compression level of the resulted
+                                PDF document, encrypt the resulted document and set user and owner password, set
+                                the permissions for printing&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title2">
+                                <a id="TOCEntry_2_Target_ID" name="Installation" class="bookmark">2. Installation</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px; text-align: justify">The EVO HTML to PDF Converter for .NET is delivered as a zip archive and it doesn't
+                                have an installer. You have to unzip the archive in a folder on the disk. Below
+                                is a brief description of the folders from the archive.<br />
+                                <br />
+                                <span class="subtitle2">2.1 Bin Folder</span><br />
+                                <br />
+                                <em>Bin</em> folder contains the .NET 2.0 assemblies you can use in your application
+                                and two prebuilt Windows Forms sample applications that you can use to quickly check
+                                if the converter can run correctly in your environment.
+                                <br />
+                                <br />
+                                <em>evohtmltopdf.dll</em> - is the HTML to PDF converter library that you can link
+                                in any .NET application, either Windows Forms or ASP.NET.
+                                <br />
+                                <em>ConvertUrlDemo.exe</em> - is a win32 application that can be used to convert
+                                a web page from a specified URL or HTML file from disk to PDF or Image<br />
+                                <br />
+                                <span class="subtitle2">2.1&nbsp; Doc Folder<br />
+                                </span>
+                                <br />
+                                <em>Doc</em> folder contains the HTML to PDF Converter manual and the API reference
+                                in chm and html format both for the library and the ASP.NET control.<br />
+                                <br />
+                                <em>EvoHtmlToPdfApi.chm</em> - contains the HTML to PDF converter library API reference<br />
+                                <br />
+                                <span class="subtitle2">2.1&nbsp; &nbsp;Samples Folder<br />
+                                </span>
+                                <br />
+                                <em>Samples</em> folder contains C# and VB.NET full sample applications to offer
+                                you ready to use code for ASP.NET, Windows Forms and console applications. The applications
+                                were created with Microsoft Visual Studio.
+                                <br />
+                                <br />
+                                <em>GettingStarted</em> - is a ASP.NET application written in C# language which
+                                shows you how to convert web pages and HTML code to PDF and images. The application
+                                uses the HTML to PDF Converter library with the default settings. This application
+                                runs live on our website under the Demo/GettingStarted menu entry.<br />
+                                <br />
+                                <em>PdfInvoiceDemo</em> - is a ASP.NET application written in C# language which
+                                shows you how to dynamically generate PDF invoices from a ASP.NET page. The application
+                                uses the HTML to PDF Converter library to convert a HTML string to PDF.
+                                <br />
+                                <br />
+                                <em>HtmlConvertFeaturesDemo</em> - is a ASP.NET application written in C# language
+                                which shows you how to convert web pages and HTML code to PDF and images. The application
+                                uses the HTML to PDF Converter library and shows you how to set various conversion
+                                parameters like the headers and footers, page size, page orientation, compression
+                                level, etc.
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px; text-align: justify"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title2">
+                                <a id="TOCEntry_3_Target_ID" name="Requirements" class="bookmark">3. Requirements and
+                                    Recommendations</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The recommended hardware and software resources for successfully running the EVO
+                                HTML to PDF converter for .NET are listed below. Basically this is the environment
+                                we used for testing the product.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px; text-align: justify">
+                                <span class="subtitle2"></span><em>Operating System</em>: Windows XP, Windows 2003
+                                Server, Windows Vista, Windows Server 2008, Windows 7, Windows Server 2008 R2<br />
+                                <em>Hardware Architecture</em>: 32-bit, 64-bit (recommended to run the converter
+                                in a 64-bit process)<br />
+                                <em>Free RAM</em>: 2GB<br />
+                                Microsoft .NET Framework 2.0 or 4.0<br />
+                                Full trust level when used in ASP.NET applications
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px; text-align: justify"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title2">
+                                <a id="TOCEntry_4_Target_ID" name="API" class="bookmark">4. Converter API</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The converter API is fully documented in the Doc/EvoHtmlToPdfApi.chm . In order
+                                to use the converter library you have include the EvoPdf namespace in
+                                your application. The main classes in this namespace is the PdfConverter class and
+                                the ImgConverter class which expose the methods you can use to render a PDF document
+                                or an image from a URL or a HTML string. Below is a brief description of the main
+                                classes and properties of the converter.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px; text-align: justify"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title3">4.1 PdfConverter Class
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">This class defines a set of methods to render a PDF document from a URL or from
+                                a HTML string. The conversion result can be a stream of bytes as byte[] object or
+                                a file on the disk. The PDF bytes can be further saved in a disk file or can be
+                                send a HTTP response to the client browser.&nbsp;<br />
+                                <br />
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title4">4.1.1 PdfConverter Render Methods
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The method below retrieves the PDF bytes from a URL. The URL must be anonymously
+                                accessible from the computer running your application otherwise a <em>'<span style="font-family: Arial">Get
+                                    web page content cancelled or invalid URL supplied</span></em>' exception is
+                                thrown by the converter. The best way to debug this type of exception is to load
+                                the URL in the Internet Explorer browser running on the same machine with your application
+                                and see if the page is correctly loaded.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt"><span class="kwrd">public</span> <span class="kwrd">byte</span>[] GetPdfBytesFromUrl ( <span
+                                        class="kwrd">string</span> url )</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">To convert a HTML string to PDF you can use one of the following methods below.
+                                The first method simply renders the HTML string as a PDF document. The second one
+                                accepts an additional parameter <em>urlBase</em> which is the full URL of the page
+                                from where you have retrieved the HTML string. The<em> urlBase</em> parameter is
+                                a hint for the converter which is used to determine the full URL of the images and
+                                other external files like CSS and JavaScript referenced in the HTML string by a
+                                relative URL. If you don't set this parameter the images referenced by relative
+                                URLS won't appear in the document and the styles from external CSS files won't be
+                                applied to the rendered document.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt"><span class="kwrd">public</span> <span class="kwrd">byte</span>[] GetPdfBytesFromHtmlString (<span
+                                        class="kwrd">string</span> htmlString)</pre>
+                                    <pre><span class="kwrd">public</span> <span class="kwrd">byte</span>[] GetPdfBytesFromHtmlString (<span
+                                        class="kwrd">string</span> htmlString,<span class="kwrd">string</span> urlBase)</pre>
+                                    <pre class="alt">&nbsp;</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The correspondent methods you can use to render the PDF document in disk file are
+                                listed below. These methods internally use the methods above to get the bytes array
+                                and then they simply save the bytes in the specified file on disk.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt"><span class="kwrd">public</span> <span class="kwrd">void</span> SavePdfFromUrlToFile (<span
+                                        class="kwrd">string</span> url, <span class="kwrd">string</span> outFile)<br /></pre>
+                                    <pre><span class="kwrd">public</span> <span class="kwrd">void</span> SavePdfFromHtmlStringToFile (<span
+                                        class="kwrd">string</span> htmlString, <span class="kwrd">string</span> outFile)</pre>
+                                    <pre class="alt"><span class="kwrd">public</span> <span class="kwrd">void</span> SavePdfFromHtmlStringToFile (<span
+                                        class="kwrd">string</span> htmlString, <span class="kwrd">string</span> outFile, <span
+                                            class="kwrd">string</span> urlBase)</pre>
+                                    <pre>&nbsp;</pre>
+                                    <pre class="alt">&nbsp;</pre>
+                                </div>
+                                In the full API reference document you'll notice some other similar methods for
+                                converting a HTML stream to PDF or a HTML file to file but they are derived from
+                                the methods described above and in the most of the cases you won't need them.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title4">4.1.2 PdfConverter Configuration Properties
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The conversion process and the aspect of the generated PDF document can be configured
+                                in many ways. You can set the PDF document page size (A4, A3, etc), orientation
+                                (Portrait or Landscape), compression level, encryption and passwords, document info
+                                (author, title, subject, etc), add headers and footers with page numbering, etc.
+                                The main properties of the converter are listed below.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">To set the license key you received after purchase and unlock the product you can
+                                use the <em>LicenseKey</em> property. If this property is not set with any value
+                                the converter will enter in demo mode.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt"><span class="kwrd">public</span> <span class="kwrd">string</span> LicenseKey { get; set; }</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The <em>HtmlViewerWidth</em> and <em>HtmlViewerHeight</em> properties allows you
+                                to set the width and height of the virtual browser windows. The web page content
+                                is rendered based on the virtual browser width specified as a integer value in pixels.
+                                Setting these properties has the same effect as the effect produced when resizing
+                                a web page in a browser window to the specified dimensions.
+                                <br />
+                                <br />
+                                The default value of the HtmlViewerWidth property is 1024 pixels. The default value
+                                of the HtmlViewerHeight property is 0 pixels which means the height will be automatically
+                                determined. These values are producing good results in most of the cases but there
+                                are also some situations when you'll have to change these properties. You can also
+                                choose to let the converter autodetermine both the width and height of the virtual
+                                browser by setting both HtmlViewerWidth and HtmlViewerHeight properties to 0.<br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt"><span class="kwrd">public</span> <span class="kwrd">int</span> HtmlViewerWidth { get; set; }</pre>
+                                    <pre><span class="kwrd">public</span> <span class="kwrd">int</span> HtmlViewerHeight { get; set; }</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The <em>PdfDocumentOptions</em> property allows you to change the aspect and properties
+                                of the rendered PDF document like setting the margins, add header and footer, embed
+                                true type fonts, generate a document with selectable texts and images or a document
+                                with an embedded image, enable or disable live links, pdf page size and page orientation,
+                                compression level, show or hide the headers and footers.&nbsp;<br />
+                                <br />
+                                This property exposes an object of <em>PdfDocumentOptions</em> type which is automatically
+                                created in the <em>PdfConverter</em> constructor. Therefore you don't have to set
+                                this property directly with a value from your code but you'll have to set the properties
+                                of the exposed PdfDocumentOptions object.
+                                <br />
+                                <br />
+                                The main properties of the PdfDocumentOptions class are described in a later section.<br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt"><span class="kwrd">public</span> PdfDocumentOptions PdfDocumentOptions { get; }</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The <em>PdfSecurityOptions</em> class property allows you to change the permissions
+                                of the rendered PDF document like allow or disallow printing, etiding, etc and also
+                                to set user and owner passwords.<br />
+                                <br />
+                                This property exposes an object of <em>PdfSecurityOptions</em> type which is automatically
+                                created in the <em>PdfConverter</em> constructor. Therefore you don't have to set
+                                this property directly with a value from your code but you'll have to set the properties
+                                of the exposed PdfDocumentOptions object.
+                                <br />
+                                <br />
+                                The main properties of the PdfDocumentOptions class are described in a later section.<br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt"><span class="kwrd">public</span> PdfSecurityOptions PdfSecurityOptions { get; }</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The <em>PdfDocumentInfo</em> property allows you to set the rendered PDF description
+                                like title, author, subject, keywords, etc.
+                                <br />
+                                <br />
+                                This property exposes an object of <em>PdfSecurityOptions</em> type which is automatically
+                                created in the <em>PdfConverter</em> constructor. Therefore you don't have to set
+                                this property directly with a value from your code but you'll have to set the properties
+                                of the exposed PdfDocumentOptions object.
+                                <br />
+                                <br />
+                                The main properties of the PdfDocumentOptions class are described in a later section.<br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt"><span class="kwrd">public</span> PdfDocumentInfo PdfDocumentInfo { get; }</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The <em>PdfHeaderOptions</em> and <em>PdfFooterOptions</em> properties allows you
+                                to customize the aspect of the headers and footers added to the rendered PDF document.
+                                Note that the header and footer are visible in the resulted PDF document only if
+                                the corresponding <em>ShowHeader</em> and <em>ShowFooter</em> properties from the
+                                <em>PdfDocumentOptions</em> property are true.<br />
+                                <br />
+                                These properties expose objects of <em>PdfHeaderOptions</em> type and <em>PdfFooterOptions</em>
+                                type which are automatically created in the <em>PdfConverter</em> constructor. Therefore
+                                you don't have to set this property directly with a value from your code but you'll
+                                have to set the properties of the exposed PdfHeaderOptions and PdfFooterOptions
+                                object.
+                                <br />
+                                <br />
+                                The main properties of the PdfHeadersOptions and PdfFooterOptions classes are described
+                                in a later section.<br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt"><span class="kwrd">public</span> PdfHeaderOptions PdfHeaderOptions { get; }</pre>
+                                    <pre><span class="kwrd">public</span> PdfFooterOptions PdfFooterOptions { get; }</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px; text-align: justify"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px; text-align: justify"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title3">4.2 ImgConverter Class
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">This class defines a set of methods to render a image from a URL or from a HTML
+                                string. The conversion result can be a stream of bytes as byte[] object or a file
+                                on the disk. The image bytes can be further saved in a disk file or can be send
+                                a HTTP response to the client browser.&nbsp;<br />
+                                <br />
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title4">4.2.1 ImgConverter Render Methods
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The method below retrieves the image bytes from a URL. There is also a similar method
+                                which produces an System.Drawing.Image object from a specified URL. The second parameter
+                                allows you to specify the format of the resulted image as a value from the System.Drawing.Imaging.ImageFormat
+                                enumeration.<br />
+                                <br />
+                                The URL must be anonymously accessible from the computer running your application
+                                otherwise a <em>'<span style="font-family: Arial">Get web page content cancelled or
+                                    invalid URL supplied</span></em>' exception is thrown by the converter. The
+                                best way to debug this type of exception is to load the URL in the Internet Explorer
+                                browser running on the same machine with your application and see if the page is
+                                correctly loaded.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt"><span class="kwrd">public</span> <span class="kwrd">byte</span>[] GetImageBytesFromUrl (<span
+                                        class="kwrd">string</span> url,ImageFormat format)</pre>
+                                    <pre><span class="kwrd">public</span> Image GetImageFromUrl (<span class="kwrd">string</span> url,ImageFormat format)</pre>
+                                    <pre class="alt">&nbsp;</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">To convert a HTML string to image you can use one of the following methods below.
+                                The first method simply renders the HTML string as a Image object or as a byte[].
+                                The second one accepts an additional parameter <em>urlBase</em> which is the full
+                                URL of the page from where you have retrieved the HTML string. The<em> urlBase</em>
+                                parameter is a hint for the converter which is used to determine the full URL of
+                                the images and other external files like CSS and JavaScript referenced in the HTML
+                                string by a relative URL. If you don't set this parameter the images referenced
+                                by relative URLS won't appear in the document and the styles from external CSS files
+                                won't be applied to the rendered image.<br />
+                                <br />
+                                You can notice there are similar methods producing a System.Drawing.Image object
+                                instead of a byte[].
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt"><span class="kwrd">public</span> Image GetImageFromHtmlString (<span
+                                        class="kwrd">string</span> htmlString,ImageFormat format)</pre>
+                                    <pre><span class="kwrd">public</span> Image GetImageFromHtmlString (<span class="kwrd">string</span> htmlString,ImageFormat format,<span
+                                        class="kwrd">string</span> urlBase)</pre>
+                                    <pre class="alt">&nbsp;</pre>
+                                    <pre><span class="kwrd">public</span> <span class="kwrd">byte</span>[] GetImageBytesFromHtmlString (<span
+                                        class="kwrd">string</span> htmlString,ImageFormat format)</pre>
+                                    <pre class="alt"><span class="kwrd">public</span> <span class="kwrd">byte</span>[] GetImageBytesFromHtmlString (<span
+                                        class="kwrd">string</span> htmlString,ImageFormat format,<span class="kwrd">string</span> urlBase)</pre>
+                                    <pre>&nbsp;</pre>
+                                    <pre class="alt">&nbsp;</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The correspondent methods you can use to render the image in disk file are listed
+                                below. These methods internally use the methods above to get the bytes array and
+                                then they simply save the bytes in the specified file on disk.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt"><span class="kwrd">public</span> <span class="kwrd">void</span> SaveImageFromUrlToFile (<span
+                                        class="kwrd">string</span> url, ImageFormat format, <span class="kwrd">string</span> outFile)</pre>
+                                    <pre>&nbsp;</pre>
+                                    <pre class="alt"><span class="kwrd">public</span> <span class="kwrd">void</span> SaveImageFromHtmlStringToFile (<span
+                                        class="kwrd">string</span> htmlString, ImageFormat format, <span class="kwrd">string</span> outFile)</pre>
+                                    <pre><span class="kwrd">public</span> <span class="kwrd">void</span> SaveImageFromHtmlStringToFile (<span
+                                        class="kwrd">string</span> htmlString, ImageFormat format, <span class="kwrd">string</span> outFile, <span
+                                            class="kwrd">string</span> urlBase)</pre>
+                                    <pre class="alt">&nbsp;</pre>
+                                    <pre>&nbsp;</pre>
+                                </div>
+                                In the full API reference document you'll notice some other similar methods for
+                                converting a HTML stream to image or a HTML file to image file but they are derived
+                                from the methods described above and in the most of the cases you won't need them.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title4">4.1.2 ImgConverter Configuration Properties
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The conversion process and the aspect of the generated image can be configured with
+                                the configuration properties below.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">To set the license key you received after purchase and unlock the product you can
+                                use the <em>LicenseKey</em> property. If this property is not set with any value
+                                the converter will enter in demo mode.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt"><span class="kwrd">public</span> <span class="kwrd">string</span> LicenseKey { get; set; }</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The HtmlViewer<em>Width</em> and HtmlViewer<em>Height</em> properties allows you
+                                to set the width and height of the virtual browser windows. The web page content
+                                is rendered based on the virtual browser width specified as a integer value in pixels.
+                                Setting these properties has the same effect as the effect produced when resizing
+                                a web page in a browser window to the specified dimensions.
+                                <br />
+                                <br />
+                                The default value of the HtmlViewerWidth property is 1024 pixels. The default value
+                                of the HtmlViewerHeight property is 0 pixels which means the height will be automatically
+                                determined. These values are producing good results in most of the cases but there
+                                are also some situations when you'll have to change these properties. You can also
+                                choose to let the converter auto determine both the width and height of the virtual
+                                browser by setting both HtmlViewerWidth and HtmlViewerHeight properties to 0.<br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 24px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt"><span class="kwrd">public</span> <span class="kwrd">int</span> PageWidth { get; set; }</pre>
+                                    <pre><span class="kwrd">public</span> <span class="kwrd">int</span> PageHeight { get; set; }</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px; text-align: justify"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title2">
+                                <a id="TOCEntry_5_Target_ID" name="Features" class="bookmark">5. Features</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">In this section will be described the main features of the converter and code samples
+                                for each feature
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px; text-align: justify"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title3">
+                                <a id="TOCEntry_6_Target_ID" name="HeaderAndFooter" class="bookmark">5.1 Headers and
+                                    Footers</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 17px">In order to show or hide the header or footer on the rendered document you have
+                                to set the ShowHeader and ShowFooter properties of the PdfDocumentOptions property
+                                of the PdfConverter class. For example, to add both footer and header to the generated
+                                document you can use the following code:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt">PdfConverter pdfConverter = <span class="kwrd">new</span> PdfConverter();</pre>
+                                    <pre>pdfConverter.PdfDocumentOptions.ShowHeader = <span class="kwrd">true</span>;</pre>
+                                    <pre class="alt">pdfConverter.PdfDocumentOptions.ShowFooter = <span class="kwrd">true</span>;</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 17px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The dimensions are specified in points and a point is 1/72 inches. The A4 page size
+                                in points is 595x842. At a screen resolution of 96 dpi, a A4 PDF page has 794 pixels
+                                in width and 1123 pixels in height.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">For the footer you can set the text, to show or not the page numbering, the text
+                                that appears before the page number, the font text and color, the footer background
+                                color and to draw or not a line above the footer. Below you can see a sample code
+                                to set the footer options:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The dimensions are specified in points and a point is 1/72 inches. The A4 page size
+                                in points is 595x842. At a screen resolution of 96 dpi, a A4 PDF page has 794 pixels
+                                in width and 1123 pixels in height.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">Starting with the version 3.5 of the converter you have the possibility to add HTML
+                                in header footer. This offers maximum flexibility when designing the header and
+                                footer of the rendered PDF document. For a complete sample of adding HTML in header
+                                and footer please take a look at the WinForms_HeaderAndFooterHtml<em> </em>sample
+                                application.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title3">
+                                <a id="TOCEntry_7_Target_ID" name="SecurityOptions" class="bookmark">5.2 Security Options</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">With the security options you have the possibility to allow or disallow printing,
+                                editing, copying, filling form fields, set a user password and an owner password.
+                                When you set a user password the PDF document is encrypted and that password will
+                                be asked by the PDF viewer in order to open the PDF document. When you set the owner
+                                password that password will be required when someone wants to change the PDF permissions.
+                                Below you can see a sample code which you can use to set the security options of
+                                the generated
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt">            pdfConverter.PdfSecurityOptions.CanCopyContent = <span
+                                        class="kwrd">true</span>;</pre>
+                                    <pre>            pdfConverter.PdfSecurityOptions.CanEditContent = <span class="kwrd">
+                                        true</span>;</pre>
+                                    <pre class="alt">            pdfConverter.PdfSecurityOptions.CanFillFormFields = <span
+                                        class="kwrd">true</span>;</pre>
+                                    <pre>            pdfConverter.PdfSecurityOptions.CanPrint = <span class="kwrd">true</span>;</pre>
+                                    <pre class="alt">            pdfConverter.PdfSecurityOptions.CanEditAnnotations = <span
+                                        class="kwrd">true</span>;</pre>
+                                    <pre>            pdfConverter.PdfSecurityOptions.CanAssembleDocument = <span class="kwrd">
+                                        true</span>;</pre>
+                                    <pre class="alt">&nbsp;</pre>
+                                    <pre>            pdfConverter.PdfSecurityOptions.KeySize = EncryptionKeySize.EncryptKey128Bit;</pre>
+                                    <pre class="alt">            pdfConverter.PdfSecurityOptions.UserPassword = <span
+                                        class="str">"evopdf"</span>;</pre>
+                                    <pre>            pdfConverter.PdfSecurityOptions.OwnerPassword = <span class="str">""</span>;</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title3">
+                                <a id="TOCEntry_8_Target_ID" name="DocumentDescription" class="bookmark">5.3 Document
+                                    Description</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">You can set the document description like author, title, subject, keyword using
+                                the PdfDocumentInfo property.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt">            pdfConverter.PdfDocumentInfo.AuthorName = <span class="str">
+                                        "EvoPdf"</span>;</pre>
+                                    <pre>            pdfConverter.PdfDocumentInfo.Title = <span class="str">"PDF Document
+                                        Info"</span>;</pre>
+                                    <pre class="alt">            pdfConverter.PdfDocumentInfo.Subject = <span class="str">
+                                        "HTML to PDF Converter"</span>;</pre>
+                                    <pre>            pdfConverter.PdfDocumentInfo.Keywords = <span class="str">"HTML, PDF,
+                                        Converter"</span>;</pre>
+                                    <pre class="alt">            pdfConverter.PdfDocumentInfo.CreatedDate = DateTime.Now;</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title3">
+                                <a id="TOCEntry_9_Target_ID" name="PageBreaks" class="bookmark">5.4 Automatic and Custom
+                                    Page Breaks, Keep Together</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The converter supports the following CSS styles to control the page breaks: page-break-before:always,
+                                page-break-after:always and page-break-inside:avoid. For example, with the page-break-after:always
+                                style applied to a HTML element (image, text, etc) you instruct the converter to
+                                insert a page break right after that element is rendered.<br />
+                                <br />
+                                By default the converter always tries to avoid breaking the text between PDF pages.
+                                You can disable this behavior using the PdfConverter.AvoidTextBreak property. Also
+                                you can enable the converter to avoid breaking the images between PDF pages using
+                                the PdfConverter.AvoidImageBreak . By default this property is false.<br />
+                                <br />
+                                An advanced and very useful feature when creating PDF reports is the Keep Together
+                                feature which can be implemented with the page-break-inside:avoid style. This instructs
+                                the converter to avoid breaking the content of a group of HTML elements you want
+                                to keep together on the same page. If you think you can apply this style to a table,
+                                a table row or a div element you can easily understand the utility of this feature.
+                                <br />
+                                <br />
+                                Below is an example of using the page-break-inside:avoid style. The table contains
+                                a large number of rows, each row containing an image in the left and a text in the
+                                right and we don't want a row to span on two pages.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt"><span class="kwrd">&lt;</span><span class="html">table</span><span
+                                        class="kwrd">&gt;</span></pre>
+                                    <pre>        <span class="kwrd">&lt;</span><span class="html">tr</span> <span class="attr">style</span><span
+                                        class="kwrd">="page-break-inside : avoid"</span><span class="kwrd">&gt;</span></pre>
+                                    <pre class="alt">            <span class="kwrd">&lt;</span><span class="html">td</span><span
+                                        class="kwrd">&gt;</span></pre>
+                                    <pre>                <span class="kwrd">&lt;</span><span class="html">img</span> <span
+                                        class="attr">width</span><span class="kwrd">="100"</span> <span class="attr">height</span><span
+                                            class="kwrd">="100"</span> <span class="attr">src</span><span class="kwrd">="img1.jpg"</span><span
+                                                class="kwrd">&gt;</span></pre>
+                                    <pre class="alt">            <span class="kwrd">&lt;/</span><span class="html">td</span><span
+                                        class="kwrd">&gt;</span></pre>
+                                    <pre>            <span class="kwrd">&lt;</span><span class="html">td</span><span
+                                        class="kwrd">&gt;</span></pre>
+                                    <pre class="alt">                My text 1</pre>
+                                    <pre>            <span class="kwrd">&lt;/</span><span class="html">td</span><span
+                                        class="kwrd">&gt;</span></pre>
+                                    <pre class="alt">        <span class="kwrd">&lt;/</span><span class="html">tr</span><span
+                                        class="kwrd">&gt;</span></pre>
+                                    <pre>    </pre>
+                                    <pre class="alt">        <span class="kwrd">&lt;</span><span class="html">tr</span> <span
+                                        class="attr">style</span><span class="kwrd">="page-break-inside : avoid"</span><span
+                                            class="kwrd">&gt;</span></pre>
+                                    <pre>            <span class="kwrd">&lt;</span><span class="html">td</span><span
+                                        class="kwrd">&gt;</span></pre>
+                                    <pre class="alt">                <span class="kwrd">&lt;</span><span class="html">img</span> <span
+                                        class="attr">width</span><span class="kwrd">="100"</span> <span class="attr">height</span><span
+                                            class="kwrd">="100"</span> <span class="attr">src</span><span class="kwrd">="img2.jpg"</span><span
+                                                class="kwrd">&gt;</span></pre>
+                                    <pre>            <span class="kwrd">&lt;/</span><span class="html">td</span><span
+                                        class="kwrd">&gt;</span></pre>
+                                    <pre class="alt">            <span class="kwrd">&lt;</span><span class="html">td</span><span
+                                        class="kwrd">&gt;</span></pre>
+                                    <pre>                My text 2</pre>
+                                    <pre class="alt">            <span class="kwrd">&lt;/</span><span class="html">td</span><span
+                                        class="kwrd">&gt;</span></pre>
+                                    <pre>        <span class="kwrd">&lt;/</span><span class="html">tr</span><span class="kwrd">&gt;</span></pre>
+                                    <pre class="alt"><span class="kwrd">&lt;/</span><span class="html">table</span><span
+                                        class="kwrd">&gt;</span></pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title3">
+                                <a id="TOCEntry_10_Target_ID" name="LiveLinks" class="bookmark">5.5 Live HTTP Links</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The converter can convert any HTTP link from the HTML document into a link in the
+                                PDF document. This works on links containing text, image or any other combination
+                                supported by the HTML code. This is the default behavior of the converter. If you
+                                don't want to get active links in the generated PDF document you can set PdfConverter.PdfDocumentOptions.<span
+                                    class="identifier">LiveUrlsEnabled</span> = false.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title3">
+                                <a id="TOCEntry_11_Target_ID" name="MergeCapabilities" class="bookmark">5.6 Merge Capabilities</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The HTML to PDF Converter provides you with the possibility to append a PDF file
+                                or a list of PDF files to the conversion result. This possibility is available with
+                                the AppendPDFFile and AppendPDFFIleArray properties from PdfDocumentOptions class.
+                                The properties must be set before calling the PDF render method. There also available
+                                similar properties to append PDF streams instead of files. The prototypes of these
+                                properties are:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt"><span class="kwrd">public</span> <span class="kwrd">string</span> AppendPDFFile { get; set; }</pre>
+                                    <pre><span class="kwrd">public</span> <span class="kwrd">string</span>[] AppendPDFFileArray { get; set; }</pre>
+                                    <pre class="alt"><span class="kwrd">public</span> Stream AppendPDFStream { get; set; }</pre>
+                                    <pre><span class="kwrd">public</span> Stream[] AppendPDFStreamArray { get; set; }</pre>
+                                    <pre class="alt">&nbsp;</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">For more details please take a look a the WinForms_ConvertAndMergePdf sample application.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title3">
+                                <a id="TOCEntry_12_Target_ID" name="ClientScripts" class="bookmark">5.7 Enable/Disable
+                                    Client Scripts from HTML Page</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The JavaScript code is disabled by default in the converted page during conversion
+                                to a PDF with selectable texts and objects and enabled when converting to image.
+                                If you have JavaScript code that modifies the web page on the client you can instruct
+                                the converter to execute that JavaScript code. You can activate scripts both when
+                                rendering an image or a PDF document. The properties from PdfConverter class which
+                                allow you to activate the scripts when converting to PDF file are:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 32px">
+                                <div class="csharpcode">
+                                    <pre class="alt"><span class="kwrd">public</span> <span class="kwrd">bool</span> JavaScriptEnabled { get; set; }</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title3">
+                                <a id="TOCEntry_13_Target_ID" name="ServerAuthentication" class="bookmark">5.8 Server
+                                    Authentication</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The converter offers support for any type of HTTP authentication. For example the
+                                converter can handle <em>IIS authentication</em> types like Integrated <em>Windows Authentication</em>
+                                and <em>Basic Authentication</em>. The authentication is disabled by default. To
+                                enable authentication you have to set the <em><strong>AuthenticationOptions</strong></em>
+                                property of the PdfConverter object. Below you can find sample code for setting
+                                the username and password for authentication when converting HTML to PDF:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="csharpcode">
+                                    <pre class="alt">                pdfConverter.AuthenticationOptions.Username = username;</pre>
+                                    <pre>                pdfConverter.AuthenticationOptions.Password = password;</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The properties of <em>ImgConverter</em> class which allow you to handle the authentication
+                                when converting HTML to images are:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">
+                                <div class="csharpcode">
+                                    <pre class="alt"><span class="kwrd">public</span> <span class="kwrd">string</span> AuthenticationPassword { get; set; }</pre>
+                                    <pre><span class="kwrd">public</span> <span class="kwrd">string</span> AuthenticationUsername { get; set; }</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title3">
+                                <a id="TOCEntry_14_Target_ID" name="CustomPageSize" class="bookmark">5.9 Custom PDF
+                                    Page Size</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The converter can produce PDF documents with pages of any size. The page size is
+                                controlled by the <em><strong>PdfConverter.PdfDocumentOptions.PdfPageSize</strong></em>
+                                property of type PdfPageSize. You can set this property to standard values like
+                                A4,A3,etc or to Custom. In this case the PDF page size will be given by the <em><strong>PdfConverter.PdfDocumentOptions.CustomPdfPageSize</strong></em> property. Below
+                                is a sample code for setting the converter to produce PDF pages with the width of
+                                200 points and height of 300 points. A point is 1/72 inch.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 24px">
+                                <div class="csharpcode">
+                                    <pre class="alt">pdfConverter.PdfDocumentOptions.CustomPdfPageSize = <span class="kwrd">
+                                        new</span> SizeF(200,300);</pre>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">&nbsp;By default the custom size is set to a width of 595 and a height of 842 points
+                                which is the size of the A4 portrait page. When the page orientation is set to landscape
+                                the width and height values are inverted.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title3">
+                                <a id="TOCEntry_15_Target_ID" name="Bookmarks" class="bookmark">5.10 Bookmarks</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The converter can produce bookmarks in the generated PDF document for a list of
+                                specified HTML tags. The bookmarking is controlled by the pdfConverter.PdfBookmarkOptions
+                                property and is enabled only when a list of HTML tag names is specified by the <strong>
+                                    <em>pdfConverter.PdfBookmarkOptions.HtmlElementSelectors</em></strong> property.
+                                For example, to enable bookmarking of the H1 and H2 tags you can use the following
+                                line of C# code:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 24px">
+                                <pre class="csharpcode">pdfConverter.PdfBookmarkOptions.HtmlElementSelectors = <span
+                                    class="kwrd">new</span> <span class="kwrd">string</span>[] { <span class="str">"H1"</span>, <span
+                                        class="str">"H2"</span> };</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">The tags to be bookmarked can be further filtered by CSS class name using the <strong>
+                                <em>HtmlElementSelectors</em></strong> property. For example, to filter only
+                                the A tags having the CSS class bookmark, the following line of C# can be added
+                                to the previous one:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 24px">
+                                <pre class="csharpcode">pdfConverter.PdfBookmarkOptions.HtmlElementSelectors = <span
+                                    class="str"><span style="color: #0000ff">new</span><span style="color: #000000">
+                                    </span><span class="kwrd">string</span><span style="color: #000000">[] { </span>
+                                    <span class="str">"A[class=\"bookmark\"]</span><span class="str">"</span><span style="color: #000000">
+                                        };</span></span></pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px" class="title2">
+                                <a id="TOCEntry_16_Target_ID" name="Licensing" class="bookmark">6. Licensing</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px">A unique license key string is generated for each purchase. In order to unlock the
+                                HTML to PDF Converter product you have to set the <em><strong>LicenseKey</strong></em>
+                                property of the PdfConverter class (when converting to PDF) or of the ImgConverter
+                                class (when converting to image) with the license key string you have received after
+                                the product purchase.
+                                <br />
+                                <br />
+                                The license key contains the information about the purchased product like the product
+                                version and license type and is uniquely associated with an order ID. More details
+                                about the license types and pricing can be found on the <a href="http://www.evopdf.com/buy.aspx">Buy Now</a> page of our website.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <!-- Footer -->
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+

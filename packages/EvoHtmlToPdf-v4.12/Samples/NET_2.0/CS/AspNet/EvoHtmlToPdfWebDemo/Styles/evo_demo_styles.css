@@ -1,0 +1,79 @@
+﻿body {
+	font-family:Verdana; font-size:12px; font-weight:normal
+}
+
+.demo_title
+{
+	text-decoration:none; font-size:20px;font-weight:bold;color:#000000
+}
+.demo_description
+{
+	font-weight:normal
+}
+
+.demo_group_box
+{
+	background-color:White
+}
+
+.create_workbook_box
+{
+	background-color:#FFDECE
+}
+
+.master_title
+{
+	font-size:18px;font-weight:bold
+}
+table.master_header
+{
+	background-color:#F5F5F5
+}
+
+.master_table
+{
+	background-color:#FFFFFF
+}
+
+A:link {
+	COLOR: #4579ae; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #4579ae; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #505050; TEXT-DECORATION: underline
+}
+
+A.demolinks:link {
+	text-decoration:none;font-size:12px;font-weight:bold;color:Black
+}
+A.demolinks:visited {
+	text-decoration:none;font-size:12px;font-weight:bold;color:Black
+}
+A.demolinks:hover {
+	text-decoration:underline;font-size:12px;font-weight:bold;color:Navy
+}
+
+A.create_pdf:link {
+	color: #005300; text-decoration: none;font-size:14px;font-weight:bold
+}
+A.create_pdf:visited {
+	color: #005300; text-decoration: none;font-size:14px;font-weight:bold
+}
+A.create_pdf:hover {
+	color: #005300; text-decoration:underline ;font-size:14px;font-weight:bold
+}
+
+.selected_demolinks {
+	background-color:#ADD8E6
+}
+
+.demolinks_box{
+	background-color:#F5F5F5
+}
+
+.error {
+	COLOR: #ff3716
+}
+

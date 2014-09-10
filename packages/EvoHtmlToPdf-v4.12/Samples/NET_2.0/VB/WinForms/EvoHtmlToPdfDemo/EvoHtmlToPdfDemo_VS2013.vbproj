@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0EBD85EB-677A-4C6F-A1DA-CE6DD21D402B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>EvoHtmlToPdfDemo</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <NoWarn>42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <NoWarn>42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="evohtmltopdf, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Bin\evohtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConvertHtmlString.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConvertHtmlString.designer.vb">
+      <DependentUpon>ConvertHtmlString.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConvertMultipleURLsToPdf.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConvertMultipleURLsToPdf.designer.vb">
+      <DependentUpon>ConvertMultipleURLsToPdf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppendPrependExternalPdf.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppendPrependExternalPdf.Designer.vb">
+      <DependentUpon>AppendPrependExternalPdf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DigitalSignature.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DigitalSignature.designer.vb">
+      <DependentUpon>DigitalSignature.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImageElementDemo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageElementDemo.Designer.vb">
+      <DependentUpon>ImageElementDemo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PdfStamps.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PdfStamps.Designer.vb">
+      <DependentUpon>PdfStamps.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SvgToPdfDemo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SvgToPdfDemo.designer.vb">
+      <DependentUpon>SvgToPdfDemo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TextAndFonts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextAndFonts.designer.vb">
+      <DependentUpon>TextAndFonts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PdfSecurity.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PdfSecurity.designer.vb">
+      <DependentUpon>PdfSecurity.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ShapesDemo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShapesDemo.designer.vb">
+      <DependentUpon>ShapesDemo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlInHeaderAndFooter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HtmlInHeaderAndFooter.designer.vb">
+      <DependentUpon>HtmlInHeaderAndFooter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlElementsLocationInPdf.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HtmlElementsLocationInPdf.designer.vb">
+      <DependentUpon>HtmlElementsLocationInPdf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainFeaturesForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFeaturesForm.designer.vb">
+      <DependentUpon>MainFeaturesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HomeForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeForm.Designer.vb">
+      <DependentUpon>HomeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Program.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <EmbeddedResource Include="ConvertHtmlString.resx">
+      <DependentUpon>ConvertHtmlString.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConvertMultipleURLsToPdf.resx">
+      <DependentUpon>ConvertMultipleURLsToPdf.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppendPrependExternalPdf.resx">
+      <DependentUpon>AppendPrependExternalPdf.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DigitalSignature.resx">
+      <DependentUpon>DigitalSignature.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageElementDemo.resx">
+      <DependentUpon>ImageElementDemo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfStamps.resx">
+      <DependentUpon>PdfStamps.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SvgToPdfDemo.resx">
+      <DependentUpon>SvgToPdfDemo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextAndFonts.resx">
+      <DependentUpon>TextAndFonts.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfSecurity.resx">
+      <DependentUpon>PdfSecurity.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShapesDemo.resx">
+      <DependentUpon>ShapesDemo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HtmlInHeaderAndFooter.resx">
+      <DependentUpon>HtmlInHeaderAndFooter.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HtmlElementsLocationInPdf.resx">
+      <DependentUpon>HtmlElementsLocationInPdf.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFeaturesForm.resx">
+      <DependentUpon>MainFeaturesForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>HomeForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepeatTableHeadOnEachPage.resx">
+      <DependentUpon>RepeatTableHeadOnEachPage.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableOfContentsAndBookmarks.resx">
+      <DependentUpon>TableOfContentsAndBookmarks.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HtmlToPdfElementDemo.resx">
+      <DependentUpon>HtmlToPdfElementDemo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Certificates\evopdf.pfx" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RepeatTableHeadOnEachPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RepeatTableHeadOnEachPage.Designer.vb">
+      <DependentUpon>RepeatTableHeadOnEachPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TableOfContentsAndBookmarks.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableOfContentsAndBookmarks.Designer.vb">
+      <DependentUpon>TableOfContentsAndBookmarks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlToPdfElementDemo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HtmlToPdfElementDemo.Designer.vb">
+      <DependentUpon>HtmlToPdfElementDemo.vb</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HeaderFooter\HeaderAndFooterHtml.htm" />
+    <Content Include="HeaderFooter\HeaderAndFooterHtml2.htm" />
+    <Content Include="HeaderFooter\Img\logo.jpg" />
+    <Content Include="HtmlBook\Book.htm" />
+    <Content Include="HtmlBook\images\evo.ico" />
+    <Content Include="HtmlBook\images\html-to-pdf-box.jpg" />
+    <Content Include="HtmlBook\images\logo.jpg" />
+    <Content Include="HtmlBook\styles\csharp.css" />
+    <Content Include="HtmlBook\styles\styles.css" />
+    <Content Include="HtmlTable\img\calendar.jpg" />
+    <Content Include="HtmlTable\img\clock.jpg" />
+    <Content Include="HtmlTable\img\usericon.jpg" />
+    <Content Include="HtmlTable\table_with_repeated_head.html" />
+    <None Include="ExternalPdfs\book.pdf" />
+    <None Include="Img\evologo-250.png" />
+    <Content Include="Img\evo.ico" />
+    <Content Include="Img\evologo-100-trans.png" />
+    <Content Include="Img\evologo-100.jpg" />
+    <Content Include="Img\logo.jpg" />
+    <Content Include="Svg\svg.html" />
+    <Content Include="Svg\svginline.xml" />
+    <None Include="Img\pdficon-20.png" />
+    <None Include="Svg\textonshape.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

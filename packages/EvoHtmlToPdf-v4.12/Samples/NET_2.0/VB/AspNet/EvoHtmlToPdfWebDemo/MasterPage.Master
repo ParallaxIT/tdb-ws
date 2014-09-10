@@ -1,0 +1,47 @@
+<%@ Master Language="C#" AutoEventWireup="true" Codebehind="MasterPage.master.vb"
+    Inherits="EvoHtmlToPdfWebDemo.MasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>EVO HTML to PDF Converter for .NET Demo</title>
+    <link href="styles/evo_demo_styles.css" type="text/css" rel="stylesheet" />
+    <link href="styles/csharp.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table style="width: 1000px" class="master_table">
+                <tr>
+                    <td>
+                        <table cellpadding="0" cellspacing="0" style="width: 100%" class="master_header">
+                            <tr>
+                                <td style="width: 6px">
+                                </td>
+                                <td style="width: 200px; height: 60px;">
+                                    <a href="http://www.evopdf.com">
+                                        <img style="border-style: none" alt="Logo image" src="Images/logo.jpg" /></a>
+                                </td>
+                                <td style="width: 10px">
+                                </td>
+                                <td align="right" valign="top" class="master_title" style="height: 60px">
+                                    ASP.NET Demo Application
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
