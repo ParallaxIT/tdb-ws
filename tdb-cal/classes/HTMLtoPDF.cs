@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using EvoPdf;
 using System.Drawing;
 
@@ -6,7 +7,7 @@ namespace tdb_cal.classes
 {
     public class HTMLtoPDF
     {
-        public static byte[] GeneratePDF(string html, string title, int topMargin, int bottomMargin, int leftMargin, int rightMargin)
+        public static byte[] GeneratePDF(string html, string title, int topMargin, int bottomMargin, int leftMargin, int rightMargin, Image backgroundImage)
         {
             var pdfConv = new PdfConverter { LicenseKey = "Z+n56Pv76Pn6/uj85vjo+/nm+frm8fHx8Q==" };
 
@@ -30,6 +31,19 @@ namespace tdb_cal.classes
             pdfConv.PdfDocumentInfo.Title = title;
             pdfConv.PdfDocumentInfo.CreatedDate = DateTime.Now;
             pdfConv.PdfDocumentInfo.AuthorName = "";
+
+            pdfConv.BeforeRenderPdfPageEvent += (BeforeRenderPdfPageParams args) =>
+            {
+                var page = args.Page;
+
+                var pageWidth = page.ClientRectangle.Width;
+                var pageHeight = page.ClientRectangle.Height;
+
+                var imageElement = new ImageElement(0, 0, pageWidth, pageHeight, backgroundImage);
+                imageElement.Opacity = 60;
+             
+                page.AddElement(imageElement);
+            };
 
             return pdfConv.GetPdfBytesFromHtmlString(html, "http://www.thedrillbook.com/");
 

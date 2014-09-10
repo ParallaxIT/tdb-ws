@@ -6,7 +6,7 @@
       <Value Profile="(Default)">http://tdb-srv.cloudapp.net/tdb-cals/CalUploader.asmx</Value>
     </Setting>
     <Setting Name="WinCalUploadTest_TDBMainWebService_tdb_wsv_auth" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://www.thedrillbook.com/webserv/tdb-wsv-auth.asmx</Value>
+      <Value Profile="(Default)">http://localhost:8080/webserv/tdb-wsv-auth.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -69,8 +69,9 @@ namespace WinCalUploadTest
 
                 // create an instance fo the web service
                 var srvMain = new TDBMainWebService.tdb_wsv_auth();
-                string verHash = srvMain.ValidateLoggedInUser("robs", "Enigma!");
-
+                //string verHash = srvMain.ValidateLoggedInUser("robs", "Enigma!");
+                string verHash = srvMain.ValidateLoggedInUser("computerrivet", "HDd8fZ6hwUq8ls");
+               
                 if (verHash == "ERRORNOTFOUND")
                 {
                     MessageBox.Show("User not authenticated", "Authentication Error");
@@ -107,6 +108,7 @@ namespace WinCalUploadTest
 
                     // pass the byte array (file) and file name to the web service
                     string sTmp = srv.UploadFileWithVerify(data, strFile, "TeamAsshole", "ASDF1234", verHash);
+                   
                     fStream.Close();
                     fStream.Dispose();
 
@@ -130,6 +132,75 @@ namespace WinCalUploadTest
         private void BtnCloseClick(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnPDFUpload_Click(object sender, EventArgs e)
+        {
+            if (txtPDFFileName.Text != string.Empty)
+                UploadPDFFile(txtPDFFileName.Text);
+            else
+                MessageBox.Show("You must select a file first.", "No File Selected");
+        }
+
+        private void UploadPDFFile(string fileName)
+        {
+            // get the exact file name from the path
+            String strFile = Path.GetFileName(fileName);
+
+            // create an instance fo the web service
+            var srv = new TDBWebService.CalUploader();
+
+            // create an instance fo the web service
+            var srvMain = new TDBMainWebService.tdb_wsv_auth();
+            string verHash = srvMain.ValidateLoggedInUser("computerrivet", "HDd8fZ6hwUq8ls");
+
+            if (verHash == "ERRORNOTFOUND")
+            {
+                MessageBox.Show("User not authenticated", "Authentication Error");
+                return;
+            }
+            if (verHash == "ERROR")
+            {
+                MessageBox.Show("Error in user authenticated", "Authentication Error");
+                return;
+            }
+
+            using (var reader = new StreamReader(fileName))
+            {
+                var html = reader.ReadToEnd();
+                var bytes = srv.CreatePDFFromHTMLFile(html, "MyTitle");
+
+                if (html.Length > 0 && bytes == null)
+                {
+                    MessageBox.Show("Error Occurred!..PDF Byte array was null");
+                }
+
+                // write the bytes to disk
+                using (var binaryWriter = new BinaryWriter(new FileStream("output.pdf", FileMode.CreateNew)))
+                {
+                    binaryWriter.Write(bytes);
+                }
+            }
+        }
+
+        private void btnBrowsePDFCreator_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Title = "Open File";
+            openFileDialog1.Filter = "All Files|*.*";
+            openFileDialog1.FileName = "";
+            try
+            {
+                openFileDialog1.InitialDirectory = "C:\\Temp";
+            }
+            catch
+            {
+                // skip it
+            }
+            openFileDialog1.ShowDialog();
+            if (openFileDialog1.FileName == "")
+                return;
+            else
+                txtPDFFileName.Text = openFileDialog1.FileName;
         }
 
     }

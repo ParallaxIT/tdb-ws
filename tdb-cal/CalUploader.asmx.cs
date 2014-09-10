@@ -168,7 +168,14 @@ namespace tdb_cal
         {
             try
             {
-                return string.IsNullOrEmpty(htmlStream) ? null : HTMLtoPDF.GeneratePDF(htmlStream, title, 36, 36, 36, 36);
+                if (Application["waterMarkImageByteArray"] == null) { throw new Exception("WaterMark image not found in Application State."); }
+
+                // Create the watermark Image 
+                var waterMarkBytes = (byte[])Application["waterMarkImageByteArray"];
+                var waterMarkMemoryStream = new MemoryStream(waterMarkBytes);
+                var waterMarkImage = System.Drawing.Image.FromStream(waterMarkMemoryStream);
+
+                return string.IsNullOrEmpty(htmlStream) ? null : HTMLtoPDF.GeneratePDF(htmlStream, title, 36, 36, 36, 36, waterMarkImage);
             }
             catch (Exception)
             {
