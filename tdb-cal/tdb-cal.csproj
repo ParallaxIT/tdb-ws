@@ -60,6 +60,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\evohtmltopdf.dll" />
     <Content Include="CalUploader.asmx" />
     <Content Include="Global.asax" />
     <Content Include="img\watermark.jpeg" />
@@ -80,6 +81,7 @@
     <Compile Include="util\VerStr.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\evointernal.dat" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
