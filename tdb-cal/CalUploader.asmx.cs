@@ -119,6 +119,8 @@ namespace tdb_cal
                 // byte array to its constructor
                 var ms = new MemoryStream(f);
 
+                string genericFilename = "teamcal.ics";
+
                 // instance a filestream pointing to the
                 // storage folder, use the original file name
                 // to name the resulting file
@@ -128,7 +130,7 @@ namespace tdb_cal
                 if (Directory.Exists(System.Web.Hosting.HostingEnvironment.MapPath("~/cals/teams/" + teamID + "/")))
                 {
                     //we already have a calendar file, delete it
-                    File.Delete(System.Web.Hosting.HostingEnvironment.MapPath("~/cals/teams/" + teamID + "/") + fileName);
+                    File.Delete(System.Web.Hosting.HostingEnvironment.MapPath("~/cals/teams/" + teamID + "/") + genericFilename);
                 }
                 else
                 {
@@ -136,7 +138,7 @@ namespace tdb_cal
                         System.Web.Hosting.HostingEnvironment.MapPath("~/cals/teams/" + teamID + "/"));
                 }
 
-                var fs = new FileStream(System.Web.Hosting.HostingEnvironment.MapPath("~/cals/teams/" + teamID + "/") + fileName, FileMode.Create);
+                var fs = new FileStream(System.Web.Hosting.HostingEnvironment.MapPath("~/cals/teams/" + teamID + "/") + genericFilename, FileMode.Create);
 
                 // write the memory stream containing the original
                 // file as a byte array to the filestream
